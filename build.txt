@@ -1,0 +1,3 @@
+author = winggar
+version = 0.1
+displayName = Specializations
