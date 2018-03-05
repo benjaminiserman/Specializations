@@ -1,1 +1,14 @@
 Specializations adds more options to the hardmode metal equipment.
+
+What Specializations offers:
+* 16 new guns
+* 8 new rapiers
+* More to come!
+
+Credits:
+winggar - coding, most art
+Radicalbot - a few sprites
+
+all of this is possible thanks to
+
+blushiemagic - TModloader
