@@ -4,9 +4,17 @@ What Specializations offers:
 * 16 new guns
 * 8 new rapiers
 * 7 new alternative helmets
+* 8 new throwing weapons
+* compatibility with Guns Can Shoot Shurikens mod
 * and more to come!
 
 Changelog:
+
+v0.4:
++ Added 8 new throwing weapons
++ Cobalt Rapier gives swiftness on hit
++ Mythril Rapier gives sharpness on hit
+* Fixed bug where Rapier Bleed debuff lasts forever on NPCs
 
 v0.3:
 * First public release

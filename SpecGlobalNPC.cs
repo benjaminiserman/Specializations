@@ -18,8 +18,13 @@ namespace Specializations
 		}
 		
 		public bool rapierDebuff = false;
-		
-		public override void UpdateLifeRegen(NPC npc, ref int damage)
+
+        public override void ResetEffects(NPC npc)
+        {
+            rapierDebuff = false;
+        }
+
+        public override void UpdateLifeRegen(NPC npc, ref int damage)
 		{
 			if (rapierDebuff)
 			{

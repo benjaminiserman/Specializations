@@ -9,7 +9,7 @@ namespace Specializations.Items.Melee
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Inflicts bleeding on hit");
+			Tooltip.SetDefault("Inflicts bleeding on hit, and adds sharpness to the weapon");
 		}
 
 		public override void SetDefaults()
@@ -32,6 +32,7 @@ namespace Specializations.Items.Melee
 		{
 
 			target.AddBuff(mod.BuffType("RapierBleed"), 300);
+            player.AddBuff(BuffID.Sharpened, 300);
 		}
 
 		public override void AddRecipes()
