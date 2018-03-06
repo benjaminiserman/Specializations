@@ -41,3 +41,12 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Visual Studio stuff
+.suo
+obj
+bin
+.vs
+.v12
+*.suo
+Pictures
