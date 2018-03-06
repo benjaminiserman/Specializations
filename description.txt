@@ -3,7 +3,17 @@ Specializations adds more options to the hardmode metal equipment.
 What Specializations offers:
 * 16 new guns
 * 8 new rapiers
-* More to come!
+* 7 new alternative helmets
+* and more to come!
+
+Changelog:
+
+v0.3:
+* First public release
+* Fixed bug where mythril weapons could be made on a normal anvil
++ Added throwing armor helmets
+
+
 
 Credits:
 winggar - coding, most art
