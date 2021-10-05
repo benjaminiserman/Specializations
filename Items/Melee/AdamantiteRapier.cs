@@ -7,7 +7,6 @@ namespace Specializations.Items.Melee
 {
 	public class AdamantiteRapier : ModItem
 	{
-		
 		private bool shoot = true;
 		
 		public override void SetStaticDefaults()
@@ -31,12 +30,10 @@ namespace Specializations.Items.Melee
 			item.autoReuse = true;  
 			item.shoot = mod.ProjectileType("RedLaser");
 			item.shootSpeed = 0;
-
 		}
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-		{	
-			
+		{
 			speedX = 10 * player.direction;
 			speedY = 0;
 			
@@ -65,6 +62,5 @@ namespace Specializations.Items.Melee
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
-
 	}
 }

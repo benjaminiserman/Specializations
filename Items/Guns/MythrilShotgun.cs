@@ -30,12 +30,14 @@ namespace Specializations.Items.Guns
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-		int numberProjectiles = 3 + Main.rand.Next(2); 
+			int numberProjectiles = 3 + Main.rand.Next(2); 
+
 			for (int i = 0; i < numberProjectiles; i++)
 			{
 				Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(7));
 				Projectile.NewProjectile(position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, type, damage, knockBack, player.whoAmI);
 			}
+
 			return false;
 		}
 		
@@ -52,7 +54,5 @@ namespace Specializations.Items.Guns
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
-
-	
 	}
 }

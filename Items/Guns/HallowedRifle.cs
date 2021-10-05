@@ -37,15 +37,15 @@ namespace Specializations.Items.Guns
 				type = mod.ProjectileType("RedLaser");
 			}
 			
-			
 			Vector2 muzzleOffset = Vector2.Normalize(new Vector2(speedX, speedY-2)) * 25f;
+
 			if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
 			{
 				position += muzzleOffset;
 			}
+
 			return true;
 		}
-		
 		
 		public override Vector2?HoldoutOffset()
 		{
@@ -60,7 +60,5 @@ namespace Specializations.Items.Guns
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
-
-	
 	}
 }

@@ -31,8 +31,7 @@ namespace Specializations.Items.Melee
 		}
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-		{	
-			
+		{
 			speedX = 10 * player.direction;
 			speedY = 0;
 			
@@ -48,7 +47,6 @@ namespace Specializations.Items.Melee
 		
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
 		{
-
 			target.AddBuff(mod.BuffType("RapierBleed"), 300);
 			player.AddBuff(BuffID.Ironskin, 180);
 		}
@@ -61,6 +59,5 @@ namespace Specializations.Items.Melee
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
-
 	}
 }

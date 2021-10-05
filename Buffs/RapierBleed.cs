@@ -23,6 +23,5 @@ namespace Specializations.Buffs
 		{
 			npc.GetGlobalNPC<SpecGlobalNPC>(mod).rapierDebuff = true;
 		}
-		
 	}
 }

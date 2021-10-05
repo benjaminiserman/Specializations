@@ -7,7 +7,6 @@ namespace Specializations.Items.Melee
 {
 	public class PalladiumRapier : ModItem
 	{
-		
 		private bool shoot = false;
 		
 		public override void SetStaticDefaults()
@@ -32,13 +31,10 @@ namespace Specializations.Items.Melee
 			item.shoot = 10;
 			item.shootSpeed = 0;
 			item.useAmmo = AmmoID.Bullet;
-
 		}
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-		{	
-		
-			
+		{
 			if (type == ProjectileID.Bullet) 
 			{
 				type = ProjectileID.BulletHighVelocity;
@@ -77,9 +73,6 @@ namespace Specializations.Items.Melee
 				return false;
 			}
 		}
-		
-		
-
 
 		public override void AddRecipes()
 		{
@@ -89,6 +82,5 @@ namespace Specializations.Items.Melee
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
-
 	}
 }

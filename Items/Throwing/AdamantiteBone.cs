@@ -30,8 +30,6 @@ namespace Specializations.Items.Throwing
 			item.value = 150;
 			item.shoot = mod.ProjectileType("AdamantiteBone");
             item.ammo = ItemID.Bone;
-
-
 		}
 
         public override void AddRecipes()

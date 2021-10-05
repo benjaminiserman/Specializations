@@ -7,7 +7,6 @@ namespace Specializations.Items.Melee
 {
 	public class OrichalcumRapier : ModItem
 	{
-		
 		bool shoot = false;
 		
 		public override void SetStaticDefaults()
@@ -34,8 +33,7 @@ namespace Specializations.Items.Melee
 		}
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-		{				
-		
+		{
 			shoot = (Main.rand.Next(2) == 0);
 		
 			speedX = 10 * player.direction;
@@ -58,8 +56,6 @@ namespace Specializations.Items.Melee
 			}
 		}
 		
-
-
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
@@ -68,6 +64,5 @@ namespace Specializations.Items.Melee
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
-
 	}
 }

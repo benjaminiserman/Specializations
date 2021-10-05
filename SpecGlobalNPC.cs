@@ -8,7 +8,6 @@ namespace Specializations
 {
 	public class SpecGlobalNPC : GlobalNPC
 	{
-		
 		public override bool InstancePerEntity
 		{
 			get
@@ -32,6 +31,7 @@ namespace Specializations
 				{
 					npc.lifeRegen = 0;
 				}
+
 				npc.lifeRegen -= 12;
 			}
 		}

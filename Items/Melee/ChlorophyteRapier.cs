@@ -30,7 +30,6 @@ namespace Specializations.Items.Melee
 		
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
 		{
-
 			target.AddBuff(mod.BuffType("RapierBleed"), 300);
 			target.AddBuff(BuffID.Poisoned, 300);
 		}
@@ -43,6 +42,5 @@ namespace Specializations.Items.Melee
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
-
 	}
 }

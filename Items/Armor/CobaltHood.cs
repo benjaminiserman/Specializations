@@ -31,7 +31,6 @@ namespace Specializations.Items.Armor
 		{
 			player.setBonus = "15% increased throwing critical strike chance";
 			player.thrownCrit += 7;
-			
 		}
 		
 		public override void ArmorSetShadows(Player player)

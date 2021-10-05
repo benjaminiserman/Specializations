@@ -8,6 +8,7 @@ namespace Specializations.Items.Throwing
 	public class CobaltShuriken : ModItem
 	{
         Mod shurikenGunMod = ModLoader.GetMod("ShurikenGun");
+
 		public override void SetDefaults()
 		{
 			item.shootSpeed = 10f;

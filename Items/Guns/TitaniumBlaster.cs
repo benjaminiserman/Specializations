@@ -30,17 +30,18 @@ namespace Specializations.Items.Guns
 		
 		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
 		{
-			
 			if (type == ProjectileID.Bullet) 
 			{
 				type = ProjectileID.ExplosiveBullet;
 			}
 			
 			Vector2 muzzleOffset = Vector2.Normalize(new Vector2(speedX, speedY-2)) * 25f;
+
 			if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
 			{
 				position += muzzleOffset;
 			}
+
 			return true;
 		}
 		
@@ -57,7 +58,5 @@ namespace Specializations.Items.Guns
 			recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
-
-	
 	}
 }

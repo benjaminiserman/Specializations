@@ -86,7 +86,6 @@ namespace Specializations.Projectiles
 
 			projectile.damage = 0; 
 
-			
 			int maxStickingJavelins = 6; 
 			Point[] stickingJavelins = new Point[maxStickingJavelins];
 			int javelinIndex = 0; 
@@ -128,10 +127,8 @@ namespace Specializations.Projectiles
 			}
 		}
 
-		
 		private const float maxTicks = 45f;
 
-		
 		private const int alphaReduction = 25;
 
 		public override void AI()

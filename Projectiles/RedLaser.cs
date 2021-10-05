@@ -14,5 +14,4 @@ namespace Specializations.Projectiles
 			projectile.penetrate = 3;
 		}
 	}
-	
 }
