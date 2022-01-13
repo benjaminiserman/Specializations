@@ -1,4 +1,6 @@
 # Specializations
+![Downloads](https://img.shields.io/github/downloads/winggar/Specializations/total?style=for-the-badge)
+
 The Specializations mod for Terraria
 
 I'm adding this readme file like, four years after I actually made this mod.
