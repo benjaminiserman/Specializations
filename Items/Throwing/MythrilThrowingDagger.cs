@@ -10,7 +10,7 @@ namespace Specializations.Items.Throwing
 		public override void SetDefaults()
 		{
 			Item.shootSpeed = 11f;
-			Item.damage = 24;
+			Item.damage = 45;
 			Item.knockBack = 2f;
 			Item.useStyle = 1;
 			Item.useAnimation = 14;

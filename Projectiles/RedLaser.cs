@@ -10,7 +10,7 @@ namespace Specializations.Projectiles
 		{
 			Projectile.CloneDefaults(ProjectileID.PurpleLaser);
 			AIType = ProjectileID.PurpleLaser;
-			Projectile.penetrate = 3;
+			Projectile.penetrate = 5;
 		}
 	}
 }

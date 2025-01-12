@@ -14,7 +14,7 @@ namespace Specializations.Items.Guns
 			Item.damage = 175;
 			Item.value = 240000;
 			Item.rare = 7;
-			Item.useStyle = 5;
+			Item.useStyle = ItemUseStyleID.Shoot;
 			Item.width = 30;
 			Item.height = 7;
 		}

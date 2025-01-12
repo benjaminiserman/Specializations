@@ -85,9 +85,7 @@ namespace Specializations.Projectiles
 				(target.Center - Projectile.Center) *
 				0.75f; 
 			Projectile.netUpdate = true; 
-			target.AddBuff(Mod.Find<ModBuff>("RapierBleed").Type, 900); 
-
-			Projectile.damage = 0; 
+			target.AddBuff(Mod.Find<ModBuff>("RapierBleed").Type, 900);
 
 			int maxStickingJavelins = 6; 
 			Point[] stickingJavelins = new Point[maxStickingJavelins];
@@ -130,7 +128,12 @@ namespace Specializations.Projectiles
 			}
 		}
 
-		private const float maxTicks = 45f;
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            Projectile.damage = 0;
+        }
+
+        private const float maxTicks = 45f;
 
 		private const int alphaReduction = 25;
 

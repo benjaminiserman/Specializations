@@ -10,13 +10,13 @@ namespace Specializations.Items.Guns
 	{
 		public override void SetDefaults()
 		{
-			Item.damage = 43;
+			Item.damage = 49;
 			Item.DamageType = DamageClass.Ranged;
 			Item.width = 17;
 			Item.height = 12;
-			Item.useTime = 24;
-			Item.useAnimation = 24;
-			Item.useStyle = 5;
+			Item.useTime = 20;
+			Item.useAnimation = 21;
+			Item.useStyle = ItemUseStyleID.Shoot;
 			Item.noMelee = true;
 			Item.knockBack = 6;
 			Item.value = 72000;
@@ -24,8 +24,9 @@ namespace Specializations.Items.Guns
 			Item.UseSound = SoundID.Item41;
 			Item.autoReuse = false;
 			Item.shoot = ProjectileID.PurificationPowder;
-			Item.shootSpeed = 14f;
+			Item.shootSpeed = 16f;
 			Item.useAmmo = AmmoID.Bullet;
+			Item.crit = 9;
 		}
 		
 		public override Vector2? HoldoutOffset()

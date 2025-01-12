@@ -23,7 +23,7 @@ namespace Specializations.Items.Guns
 			Item.useTime = 5;
 			Item.useAnimation = 15;
 			Item.reuseDelay = 17;
-			Item.useStyle = 5;
+			Item.useStyle = ItemUseStyleID.Shoot;
 			Item.noMelee = true;
 			Item.knockBack = 0;
 			Item.value = 80000;

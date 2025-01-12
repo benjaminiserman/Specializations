@@ -18,8 +18,8 @@ namespace Specializations.Projectiles
         public override void SetDefaults()
         {
             Projectile.CloneDefaults(ProjectileID.Grenade);
-
             Projectile.timeLeft = 240;
+			AIType = ProjectileID.Grenade;
         }
 
 		public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)

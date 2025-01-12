@@ -16,7 +16,7 @@ namespace Specializations.Items.Guns
 			Item.height = 9;
 			Item.useTime = 14;
 			Item.useAnimation = 14;
-			Item.useStyle = 5;
+			Item.useStyle = ItemUseStyleID.Shoot;
 			Item.noMelee = true;
 			Item.knockBack = 4;
 			Item.value = 36000;
