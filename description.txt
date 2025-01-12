@@ -1,17 +1,17 @@
-Specializations adds more options to the hardmode metal equipment.
+Specializations adds more options to the hardmode metal equipment to fill neglected niches in weapon progression.
 
 What Specializations offers:
 * 16 new guns
 * 8 new rapiers
-* 7 new alternative helmets
 * 8 new throwing weapons
-* compatibility with Guns Can Shoot Shurikens mod
-* and more to come!
 
 Changelog:
 
 v0.5:
 + Updated to Terraria 1.4.4
+* Rebalanced all weapons
+* Removed throwing helmets, merged throwing weapons into ranged
+* Reworked some weapon mechanics
 
 v0.4:
 + Added 8 new throwing weapons
@@ -27,8 +27,8 @@ v0.3:
 
 
 Credits:
-winggar - coding, most art
-Aubritor - a few sprites
+winggar - mod creator
+Aubritor - additional art
 
 all of this is possible thanks to
 
