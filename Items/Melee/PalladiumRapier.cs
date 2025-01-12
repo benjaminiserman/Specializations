@@ -43,11 +43,11 @@ namespace Specializations.Items.Melee
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
 		{
-			if (shoot == 0 && source.AmmoItemIdUsed != 0)
+			if (shoot == 0 && source.AmmoItemIdUsed != 0 && player.ChooseAmmo(Item) != null)
 			{
 				SoundEngine.PlaySound(SoundID.Item36);
 				var bulletProjectile = type == ProjectileID.Bullet ? ProjectileID.BulletHighVelocity : type;
-				Projectile.NewProjectile(source, position, velocity, bulletProjectile, damage, knockback, player.whoAmI);
+				Projectile.NewProjectile(source, position, velocity * 2, bulletProjectile, damage, knockback, player.whoAmI);
 			}
 			
 			Projectile.NewProjectile(source, position, velocity.SafeNormalize(default) * Item.shootSpeed, ModContent.ProjectileType<PalladiumRapierProjectile>(), damage, knockback, player.whoAmI);
