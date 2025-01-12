@@ -14,12 +14,12 @@ namespace Specializations.Items.Melee
 		public override void SetDefaults()
 		{
 			Item.damage = 36;          
-			Item.DamageType = DamageClass.Melee/* tModPorter Suggestion: Consider MeleeNoSpeed for no attack speed scaling */;         
+			Item.DamageType = DamageClass.Melee;         
 			Item.width = 44;           
 			Item.height = 44;         
 			Item.useTime = 13;          
 			Item.useAnimation = 13;         
-			Item.useStyle = 3;         
+			Item.useStyle = ItemUseStyleID.Rapier;         
 			Item.knockBack = 4;        
 			Item.value = 55200;         
 			Item.rare = 4;              
@@ -29,7 +29,6 @@ namespace Specializations.Items.Melee
 		
 		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 		{
-
 			target.AddBuff(Mod.Find<ModBuff>("RapierBleed").Type, 300);
             player.AddBuff(BuffID.Swiftness, 300);
 		}

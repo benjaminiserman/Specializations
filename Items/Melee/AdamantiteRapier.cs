@@ -20,12 +20,12 @@ namespace Specializations.Items.Melee
 		public override void SetDefaults()
 		{
 			Item.damage = 48;          
-			Item.DamageType = DamageClass.Melee/* tModPorter Suggestion: Consider MeleeNoSpeed for no attack speed scaling */;         
+			Item.DamageType = DamageClass.Melee;         
 			Item.width = 44;           
 			Item.height = 44;         
 			Item.useTime = 19;          
 			Item.useAnimation = 19;         
-			Item.useStyle = 3;         
+			Item.useStyle = ItemUseStyleID.Rapier;         
 			Item.knockBack = 5;        
 			Item.value = 92000;   
 			Item.rare = 4;              

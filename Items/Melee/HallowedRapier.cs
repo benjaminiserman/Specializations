@@ -18,12 +18,12 @@ namespace Specializations.Items.Melee
 		public override void SetDefaults()
 		{
 			Item.damage = 55;          
-			Item.DamageType = DamageClass.Melee/* tModPorter Suggestion: Consider MeleeNoSpeed for no attack speed scaling */;         
+			Item.DamageType = DamageClass.Melee;         
 			Item.width = 60;           
 			Item.height = 60;         
 			Item.useTime = 16;          
 			Item.useAnimation = 16;         
-			Item.useStyle = 3;         
+			Item.useStyle = ItemUseStyleID.Rapier;         
 			Item.knockBack = 4;        
 			Item.value = 153333;         
 			Item.rare = 4;              
@@ -32,12 +32,6 @@ namespace Specializations.Items.Melee
 			Item.shoot = ModContent.ProjectileType<RedLaser>();
 			Item.shootSpeed = 0;			
 		}
-
-        public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
-        {
-			velocity.X = 10 * player.direction;
-			velocity.Y = 0;
-        }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
 		{

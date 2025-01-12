@@ -23,7 +23,7 @@ namespace Specializations.Items.Guns
 			Item.rare = 4;
 			Item.UseSound = SoundID.Item36;
 			Item.autoReuse = false;
-			Item.shoot = 10;
+			Item.shoot = ProjectileID.PurificationPowder;
 			Item.shootSpeed = 10f;
 			Item.useAmmo = AmmoID.Bullet;
 		}
