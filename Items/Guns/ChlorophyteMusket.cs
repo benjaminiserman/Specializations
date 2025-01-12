@@ -11,7 +11,7 @@ namespace Specializations.Items.Guns
 		public override void SetDefaults()
 		{
 			Item.CloneDefaults(ItemID.Musket);
-			Item.damage = 92;
+			Item.damage = 175;
 			Item.value = 240000;
 			Item.rare = 7;
 			Item.useStyle = 5;

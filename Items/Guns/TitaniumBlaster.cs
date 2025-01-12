@@ -24,7 +24,7 @@ namespace Specializations.Items.Guns
 			Item.UseSound = SoundID.Item36;
 			Item.autoReuse = false;
 			Item.shoot = 10;
-			Item.shootSpeed = 16f;
+			Item.shootSpeed = 10f;
 			Item.useAmmo = AmmoID.Bullet;
 		}
 

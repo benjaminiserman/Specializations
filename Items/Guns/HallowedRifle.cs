@@ -12,7 +12,7 @@ namespace Specializations.Items.Guns
 		
 		public override void SetDefaults()
 		{
-			Item.damage = 31;
+			Item.damage = 35;
 			Item.DamageType = DamageClass.Ranged;
 			Item.width = 20;
 			Item.height = 7;

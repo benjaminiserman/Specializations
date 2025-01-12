@@ -10,11 +10,11 @@ namespace Specializations.Items.Guns
 	{
 		public override void SetDefaults()
 		{
-			Item.damage = 16;
+			Item.damage = 22;
 			Item.DamageType = DamageClass.Ranged;
 			Item.width = 17;
 			Item.height = 12;
-			Item.useTime = 10;
+			Item.useTime = 11;
 			Item.useAnimation = 10;
 			Item.useStyle = 5;
 			Item.noMelee = true;
@@ -24,7 +24,7 @@ namespace Specializations.Items.Guns
 			Item.UseSound = SoundID.Item41;
 			Item.autoReuse = true;
 			Item.shoot = 10;
-			Item.shootSpeed = 16f;
+			Item.shootSpeed = 11f;
 			Item.useAmmo = AmmoID.Bullet;
 		}
 		

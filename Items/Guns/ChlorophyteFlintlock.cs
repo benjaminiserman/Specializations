@@ -11,7 +11,7 @@ namespace Specializations.Items.Guns
 		public override void SetDefaults()
 		{
 			Item.CloneDefaults(ItemID.FlintlockPistol);
-			Item.damage = 42;
+			Item.damage = 91;
 			Item.value = 192000;
 			Item.rare = 7;
 		}
