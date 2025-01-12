@@ -1,7 +1,7 @@
 Buffs: {
 	RapierBleed: {
 		DisplayName: Rapier Bleed
-		Description: Mods.Specializations.Buffs.RapierBleed.Description
+		Description: Losing life
 	}
 }
 
@@ -43,7 +43,7 @@ Items: {
 
 	HallowedRifle: {
 		DisplayName: Hallowed Rifle
-		Tooltip: "Shoots hot-red lasers"
+		Tooltip: Shoots hot-red lasers
 	}
 
 	MythrilRevolver: {
@@ -58,12 +58,12 @@ Items: {
 
 	OrichalcumMachineGun: {
 		DisplayName: Orichalcum Machine Gun
-		Tooltip: "40% chance to save ammo"
+		Tooltip: 40% chance to save ammo
 	}
 
 	OrichalcumMachinePistol: {
 		DisplayName: Orichalcum Machine Pistol
-		Tooltip: "50% chance to save ammo"
+		Tooltip: 50% chance to save ammo
 	}
 
 	PalladiumMagnum: {
@@ -73,12 +73,16 @@ Items: {
 
 	PalladiumRifle: {
 		DisplayName: Palladium Rifle
-		Tooltip: "Three round burst\nOnly the first shot consumes ammo"
+		Tooltip:
+			'''
+			Three round burst
+			Only the first shot consumes ammo
+			'''
 	}
 
 	TitaniumBlaster: {
 		DisplayName: Titanium Blaster
-		Tooltip: "Shoots powerful explosive bullets"
+		Tooltip: Shoots powerful explosive bullets
 	}
 
 	TitaniumCarbine: {
@@ -88,42 +92,42 @@ Items: {
 
 	AdamantiteRapier: {
 		DisplayName: Adamantite Rapier
-		Tooltip: "Fires a hot-red laser with every other swing"
+		Tooltip: Fires a hot-red laser with every other swing
 	}
 
 	ChlorophyteRapier: {
 		DisplayName: Chlorophyte Rapier
-		Tooltip: "Inflicts bleeding on hit and shoots two spore clouds with each swing"
+		Tooltip: Inflicts bleeding on hit and shoots two spore clouds with each swing
 	}
 
 	CobaltRapier: {
 		DisplayName: Cobalt Rapier
-		Tooltip: "Inflicts bleeding and gives the wielder swiftness on hit"
+		Tooltip: Inflicts bleeding and gives the wielder swiftness on hit
 	}
 
 	HallowedRapier: {
 		DisplayName: Hallowed Rapier
-		Tooltip: "Inflicts bleeding on hit, gives the wielder ironguard, and shoots red-hot lasers"
+		Tooltip: Inflicts bleeding on hit, shoots red-hot lasers, and occasionally gives the wielder buffs on hit
 	}
 
 	MythrilRapier: {
 		DisplayName: Mythril Rapier
-		Tooltip: "Inflicts bleeding and sharpens itself on hit"
+		Tooltip: Inflicts bleeding and sharpens itself on hit
 	}
 
 	OrichalcumRapier: {
 		DisplayName: Orichalcum Rapier
-		Tooltip: "Inflcits bleeding on hit and shoots a wall-piercing pink petal every other swing"
+		Tooltip: Inflcits bleeding on hit and shoots a wall-piercing pink petal every other swing
 	}
 
 	PalladiumRapier: {
 		DisplayName: Palladium Rapier
-		Tooltip: "Shoots a bullet with every third swing"
+		Tooltip: Shoots a bullet with every third swing
 	}
 
 	TitaniumRapier: {
 		DisplayName: Titanium Rapier
-		Tooltip: "Inflicts bleeding and gives the wielder ironskin on hit"
+		Tooltip: Inflicts bleeding and gives the wielder ironskin on hit
 	}
 
 	AdamantiteBone: {

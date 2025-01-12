@@ -11,7 +11,7 @@ namespace Specializations.Items.Melee
 	public class OrichalcumRapier : ModItem
 	{
 		bool shoot = false;
-		
+
 		public override void SetDefaults()
 		{
 			Item.damage = 43;          
@@ -44,12 +44,6 @@ namespace Specializations.Items.Melee
 			}
 
 			return true;
-		}
-
-		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
-		{
-			target.AddBuff(Mod.Find<ModBuff>("RapierBleed").Type, 300);
-            player.AddBuff(BuffID.Swiftness, 300);
 		}
 		
 		public override void AddRecipes()

@@ -109,5 +109,15 @@ namespace Specializations.Projectiles
 			float collisionPoint = 0f; // Don't need that variable, but required as parameter
 			return Collision.CheckAABBvLineCollision(targetHitbox.TopLeft(), targetHitbox.Size(), start, end, CollisionWidth, ref collisionPoint);
 		}
+
+        public override void ModifyHitPlayer(Player target, ref Player.HurtModifiers modifiers)
+        {
+            target.AddBuff(Mod.Find<ModBuff>("RapierBleed").Type, 300);
+        }
+
+        public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
+        {
+            target.AddBuff(Mod.Find<ModBuff>("RapierBleed").Type, 300);
+        }
     }
 }

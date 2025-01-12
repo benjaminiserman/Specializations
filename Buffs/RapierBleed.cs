@@ -6,8 +6,6 @@ namespace Specializations.Buffs
 	{
 		public override void SetStaticDefaults()
 		{
-			// DisplayName.SetDefault("Rapier Wounds");
-			// Description.SetDefault("Losing life");
 			Main.debuff[Type] = true;
 			Main.pvpBuff[Type] = true;
 			Main.buffNoSave[Type] = true;

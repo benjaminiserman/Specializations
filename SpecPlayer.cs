@@ -27,7 +27,7 @@ namespace Specializations
 				}
 
 				Player.lifeRegenTime = 0;
-				Player.lifeRegen -= 6;
+				Player.lifeRegen -= 9;
 			}
 		}
 	}

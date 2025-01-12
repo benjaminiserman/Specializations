@@ -32,16 +32,10 @@ namespace Specializations.Items.Melee
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
 		{
-			Projectile.NewProjectile(source, position, velocity * 5, ModContent.ProjectileType<RedLaser>(), damage, knockback, player.whoAmI);
+			Projectile.NewProjectile(source, position + velocity, velocity * 5, ModContent.ProjectileType<RedLaser>(), damage, knockback, player.whoAmI);
 			SoundEngine.PlaySound(SoundID.Item91);
 
 			return true;
-		}
-		
-		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
-		{
-			target.AddBuff(Mod.Find<ModBuff>("RapierBleed").Type, 300);
-			player.AddBuff(BuffID.Ironskin, 180);
 		}
 
 		public override void AddRecipes()

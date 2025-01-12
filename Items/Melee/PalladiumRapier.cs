@@ -55,11 +55,6 @@ namespace Specializations.Items.Melee
 			return false;
 		}
 
-		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
-		{
-			target.AddBuff(Mod.Find<ModBuff>("RapierBleed").Type, 300);
-		}
-
         public override bool NeedsAmmo(Player player)
         {
             return false;

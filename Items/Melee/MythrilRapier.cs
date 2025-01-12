@@ -27,12 +27,6 @@ namespace Specializations.Items.Melee
 			Item.noMelee = true;
 		}
 		
-		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
-		{
-			target.AddBuff(Mod.Find<ModBuff>("RapierBleed").Type, 300);
-            player.AddBuff(BuffID.Sharpened, 300);
-		}
-
 		public override void AddRecipes()
 		{
 			Recipe recipe = CreateRecipe();

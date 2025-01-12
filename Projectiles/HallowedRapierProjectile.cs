@@ -45,11 +45,13 @@ namespace Specializations.Projectiles
 			Player player = Main.player[Projectile.owner];
 
 			Timer += 1;
-			if (Timer >= TotalDuration) {
+			if (Timer >= TotalDuration) 
+			{
 				Projectile.Kill();
 				return;
 			}
-			else {
+			else 
+			{
 				player.heldProj = Projectile.whoAmI;
 			}
 
@@ -85,15 +87,10 @@ namespace Specializations.Projectiles
 			}
 		}
 
-		public override bool ShouldUpdatePosition()
-         {
-			// Update Projectile.Center manually
-			return false;
-		}
+		public override bool ShouldUpdatePosition() => false;
 
 		public override void CutTiles() 
         {
-			// "cutting tiles" refers to breaking pots, grass, queen bee larva, etc.
 			DelegateMethods.tilecut_0 = TileCuttingContext.AttackProjectile;
 			Vector2 start = Projectile.Center;
 			Vector2 end = start + Projectile.velocity.SafeNormalize(-Vector2.UnitY) * 10f;
@@ -102,12 +99,26 @@ namespace Specializations.Projectiles
 
 		public override bool? Colliding(Rectangle projHitbox, Rectangle targetHitbox)
         {
-			// "Hit anything between the player and the tip of the sword"
-			// shootSpeed is 2.1f for reference, so this is basically plotting 12 pixels ahead from the center
 			Vector2 start = Projectile.Center;
 			Vector2 end = start + Projectile.velocity * CollisionLength;
-			float collisionPoint = 0f; // Don't need that variable, but required as parameter
+			float collisionPoint = 0f;
 			return Collision.CheckAABBvLineCollision(targetHitbox.TopLeft(), targetHitbox.Size(), start, end, CollisionWidth, ref collisionPoint);
 		}
+
+		public override void ModifyHitPlayer(Player target, ref Player.HurtModifiers modifiers)
+        {
+            target.AddBuff(Mod.Find<ModBuff>("RapierBleed").Type, 300);
+			Main.LocalPlayer.AddBuff(BuffID.Ironskin, 600);
+			Main.LocalPlayer.AddBuff(BuffID.Sharpened, 600);
+			Main.LocalPlayer.AddBuff(BuffID.Swiftness, 600);
+        }
+
+        public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
+        {
+            target.AddBuff(Mod.Find<ModBuff>("RapierBleed").Type, 300);
+			Main.LocalPlayer.AddBuff(BuffID.Ironskin, 600);
+			Main.LocalPlayer.AddBuff(BuffID.Sharpened, 600);
+			Main.LocalPlayer.AddBuff(BuffID.Swiftness, 600);
+        }
     }
 }
