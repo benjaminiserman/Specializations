@@ -7,8 +7,9 @@ What Specializations offers:
 
 Changelog:
 
-v0.5:
+v0.5.1:
 + Updated to Terraria 1.4.4
+* Update thumbnail
 * Rebalanced all weapons
 * Removed throwing helmets, merged throwing weapons into ranged
 * Reworked some weapon mechanics
@@ -33,3 +34,5 @@ Aubritor - additional art
 all of this is possible thanks to
 
 blushiemagic - TModloader
+
+Issues can be reported on github: https://github.com/benjaminiserman/Specializations
