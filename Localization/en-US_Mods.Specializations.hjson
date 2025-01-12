@@ -43,7 +43,7 @@ Items: {
 
 	HallowedRifle: {
 		DisplayName: Hallowed Rifle
-		Tooltip: ""
+		Tooltip: "Shoots hot-red lasers"
 	}
 
 	MythrilRevolver: {
@@ -58,12 +58,12 @@ Items: {
 
 	OrichalcumMachineGun: {
 		DisplayName: Orichalcum Machine Gun
-		Tooltip: ""
+		Tooltip: "40% chance to save ammo"
 	}
 
 	OrichalcumMachinePistol: {
 		DisplayName: Orichalcum Machine Pistol
-		Tooltip: ""
+		Tooltip: "50% chance to save ammo"
 	}
 
 	PalladiumMagnum: {
@@ -73,12 +73,12 @@ Items: {
 
 	PalladiumRifle: {
 		DisplayName: Palladium Rifle
-		Tooltip: ""
+		Tooltip: "Three round burst\nOnly the first shot consumes ammo"
 	}
 
 	TitaniumBlaster: {
 		DisplayName: Titanium Blaster
-		Tooltip: ""
+		Tooltip: "Shoots powerful explosive bullets"
 	}
 
 	TitaniumCarbine: {
@@ -88,42 +88,42 @@ Items: {
 
 	AdamantiteRapier: {
 		DisplayName: Adamantite Rapier
-		Tooltip: ""
+		Tooltip: "Fires a hot-red laser with every other swing"
 	}
 
 	ChlorophyteRapier: {
 		DisplayName: Chlorophyte Rapier
-		Tooltip: ""
+		Tooltip: "Inflicts bleeding on hit and shoots two spore clouds with each swing"
 	}
 
 	CobaltRapier: {
 		DisplayName: Cobalt Rapier
-		Tooltip: ""
+		Tooltip: "Inflicts bleeding and gives the wielder swiftness on hit"
 	}
 
 	HallowedRapier: {
 		DisplayName: Hallowed Rapier
-		Tooltip: ""
+		Tooltip: "Inflicts bleeding on hit, gives the wielder ironguard, and shoots red-hot lasers"
 	}
 
 	MythrilRapier: {
 		DisplayName: Mythril Rapier
-		Tooltip: ""
+		Tooltip: "Inflicts bleeding and sharpens itself on hit"
 	}
 
 	OrichalcumRapier: {
 		DisplayName: Orichalcum Rapier
-		Tooltip: ""
+		Tooltip: "Inflcits bleeding on hit and shoots a wall-piercing pink petal every other swing"
 	}
 
 	PalladiumRapier: {
 		DisplayName: Palladium Rapier
-		Tooltip: ""
+		Tooltip: "Shoots a bullet with every third swing"
 	}
 
 	TitaniumRapier: {
 		DisplayName: Titanium Rapier
-		Tooltip: ""
+		Tooltip: "Inflicts bleeding and gives the wielder ironskin on hit"
 	}
 
 	AdamantiteBone: {

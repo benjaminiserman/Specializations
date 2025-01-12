@@ -9,11 +9,6 @@ namespace Specializations.Items.Melee
 {
     public class ChlorophyteRapier : ModItem
 	{
-		public override void SetStaticDefaults()
-		{
-			// Tooltip.SetDefault("Inflicts bleeding and poison on hit");
-		}
-
 		public override void SetDefaults()
 		{
 			Item.damage = 65;          
@@ -45,7 +40,6 @@ namespace Specializations.Items.Melee
         public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			target.AddBuff(Mod.Find<ModBuff>("RapierBleed").Type, 300);
-			target.AddBuff(BuffID.Poisoned, 300);
 		}
 
 		public override void AddRecipes()

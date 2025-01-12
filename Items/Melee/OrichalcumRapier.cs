@@ -12,11 +12,6 @@ namespace Specializations.Items.Melee
 	{
 		bool shoot = false;
 		
-		public override void SetStaticDefaults()
-		{
-			// Tooltip.SetDefault("Randomly fires a petal that can go through walls");
-		}
-
 		public override void SetDefaults()
 		{
 			Item.damage = 43;          
@@ -49,6 +44,12 @@ namespace Specializations.Items.Melee
 			}
 
 			return true;
+		}
+
+		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
+		{
+			target.AddBuff(Mod.Find<ModBuff>("RapierBleed").Type, 300);
+            player.AddBuff(BuffID.Swiftness, 300);
 		}
 		
 		public override void AddRecipes()

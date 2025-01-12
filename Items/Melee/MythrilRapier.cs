@@ -7,11 +7,6 @@ namespace Specializations.Items.Melee
 {
     public class MythrilRapier : ModItem
 	{
-		public override void SetStaticDefaults()
-		{
-			// Tooltip.SetDefault("Inflicts bleeding on hit, and adds sharpness to the weapon");
-		}
-
 		public override void SetDefaults()
 		{
 			Item.damage = 42;          

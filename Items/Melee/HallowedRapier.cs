@@ -10,11 +10,6 @@ namespace Specializations.Items.Melee
 {
 	public class HallowedRapier : ModItem
 	{
-		public override void SetStaticDefaults()
-		{
-			// Tooltip.SetDefault("Has the combined effects of the Adamantite and Titanium rapiers");
-		}
-
 		public override void SetDefaults()
 		{
 			Item.damage = 55;          

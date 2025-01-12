@@ -7,11 +7,6 @@ namespace Specializations.Items.Melee
 {
     public class CobaltRapier : ModItem
 	{
-		public override void SetStaticDefaults()
-		{
-			// Tooltip.SetDefault("Inflicts bleeding on hit, and gives the wielder swiftness");
-		}
-
 		public override void SetDefaults()
 		{
 			Item.damage = 36;          

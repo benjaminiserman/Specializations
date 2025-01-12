@@ -7,11 +7,6 @@ namespace Specializations.Items.Melee
 {
     public class TitaniumRapier : ModItem
 	{
-		public override void SetStaticDefaults()
-		{
-			// Tooltip.SetDefault("Inflicts bleeding on hit, and gives the user ironskin");
-		}
-
 		public override void SetDefaults()
 		{
 			Item.damage = 50;          

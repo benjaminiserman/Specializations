@@ -8,12 +8,6 @@ namespace Specializations.Items.Guns
 {
     public class PalladiumRifle : ModItem
 	{
-		
-		public override void SetStaticDefaults()
-		{
-			// Tooltip.SetDefault("Only the first shot consumes ammo.");
-		}
-		
 		public override void SetDefaults()
 		{
 			Item.damage = 24;
@@ -37,7 +31,7 @@ namespace Specializations.Items.Guns
 		
 		public override bool CanConsumeAmmo(Item ammo, Player player)
 		{
-			return !(player.itemAnimation < Item.useAnimation - 2);
+			return player.itemAnimation >= Item.useAnimation - 2;
 		}
 		
 		public override Vector2? HoldoutOffset()

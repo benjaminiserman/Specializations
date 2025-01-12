@@ -11,11 +11,6 @@ namespace Specializations.Items.Melee
 	public class PalladiumRapier : ModItem
 	{
 		private int shoot = 0;
-		
-		public override void SetStaticDefaults()
-		{
-			// Tooltip.SetDefault("Randomly fires bullets");
-		}
 
 		public override void SetDefaults()
 		{
@@ -58,6 +53,11 @@ namespace Specializations.Items.Melee
 			Projectile.NewProjectile(source, position, velocity.SafeNormalize(default) * Item.shootSpeed, ModContent.ProjectileType<PalladiumRapierProjectile>(), damage, knockback, player.whoAmI);
 
 			return false;
+		}
+
+		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
+		{
+			target.AddBuff(Mod.Find<ModBuff>("RapierBleed").Type, 300);
 		}
 
         public override bool NeedsAmmo(Player player)
