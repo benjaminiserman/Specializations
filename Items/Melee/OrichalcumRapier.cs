@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using Specializations.Projectiles;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -29,9 +30,11 @@ namespace Specializations.Items.Melee
 			Item.value = 84333;
 			Item.rare = 4;              
 			Item.UseSound = SoundID.Item1;      
-			Item.autoReuse = true;  
-			Item.shoot = ProjectileID.FlowerPetal;
-			Item.shootSpeed = 0;
+			Item.autoReuse = true;
+			Item.shoot = ModContent.ProjectileType<OrichalcumRapierProjectile>();
+			Item.shootSpeed = 2.1f;
+			Item.noUseGraphic = true;
+			Item.noMelee = true;
 		}
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -40,13 +43,12 @@ namespace Specializations.Items.Melee
 			
 			if (shoot)
 			{
+				Projectile.NewProjectile(source, position, velocity * 2, ProjectileID.FlowerPetal, damage, knockback, player.whoAmI);
 				SoundEngine.PlaySound(SoundID.Item71);
-				return true;
+				return true;			
 			}
-			else
-			{
-				return false;
-			}
+
+			return true;
 		}
 		
 		public override void AddRecipes()

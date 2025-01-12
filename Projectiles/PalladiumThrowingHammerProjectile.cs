@@ -16,7 +16,7 @@ namespace Specializations.Projectiles
             Projectile.aiStyle = 2;
             Projectile.friendly = true;
             Projectile.DamageType = DamageClass.Melee;
-            Projectile.penetrate = 2;
+            Projectile.penetrate = 1;
         }
 
         public override void OnKill(int timeLeft)

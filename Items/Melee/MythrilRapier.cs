@@ -1,3 +1,4 @@
+using Specializations.Projectiles;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -25,6 +26,10 @@ namespace Specializations.Items.Melee
 			Item.rare = 4;              
 			Item.UseSound = SoundID.Item1;      
 			Item.autoReuse = true;   
+			Item.shoot = ModContent.ProjectileType<MythrilRapierProjectile>();
+			Item.shootSpeed = 2.1f;
+			Item.noUseGraphic = true;
+			Item.noMelee = true;
 		}
 		
 		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)

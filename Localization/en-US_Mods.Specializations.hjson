@@ -177,4 +177,12 @@ Projectiles: {
 	PalladiumThrowingHammerProjectile.DisplayName: Palladium Throwing Hammer Projectile
 	RedLaser.DisplayName: Red Laser
 	TitaniumJavelinProjectile.DisplayName: Titanium Javelin Projectile
+	AdamantiteRapierProjectile.DisplayName: Adamantite Rapier Projectile
+	ChlorophyteRapierProjectile.DisplayName: Chlorophyte Rapier Projectile
+	CobaltRapierProjectile.DisplayName: Cobalt Rapier Projectile
+	HallowedRapierProjectile.DisplayName: Hallowed Rapier Projectile
+	MythrilRapierProjectile.DisplayName: Mythril Rapier Projectile
+	OrichalcumRapierProjectile.DisplayName: Orichalcum Rapier Projectile
+	PalladiumRapierProjectile.DisplayName: Palladium Rapier Projectile
+	TitaniumRapierProjectile.DisplayName: Titanium Rapier Projectile
 }

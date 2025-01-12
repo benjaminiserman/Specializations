@@ -21,21 +21,25 @@ namespace Specializations.Items.Melee
 			Item.DamageType = DamageClass.Melee;         
 			Item.width = 60;           
 			Item.height = 60;         
-			Item.useTime = 16;          
+			Item.useTime = 17;          
 			Item.useAnimation = 16;         
 			Item.useStyle = ItemUseStyleID.Rapier;         
 			Item.knockBack = 4;        
 			Item.value = 153333;         
 			Item.rare = 4;              
 			Item.UseSound = SoundID.Item1;      
-			Item.autoReuse = true;
-			Item.shoot = ModContent.ProjectileType<RedLaser>();
-			Item.shootSpeed = 0;			
+			Item.autoReuse = true;	
+			Item.shoot = ModContent.ProjectileType<HallowedRapierProjectile>();
+			Item.shootSpeed = 2.1f;
+			Item.noUseGraphic = true;
+			Item.noMelee = true;
 		}
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
 		{
+			Projectile.NewProjectile(source, position, velocity * 5, ModContent.ProjectileType<RedLaser>(), damage, knockback, player.whoAmI);
 			SoundEngine.PlaySound(SoundID.Item91);
+
 			return true;
 		}
 		

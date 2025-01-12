@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using Specializations.Projectiles;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -30,9 +31,11 @@ namespace Specializations.Items.Melee
 			Item.rare = 4;              
 			Item.UseSound = SoundID.Item1;      
 			Item.autoReuse = true;  
-			Item.shoot = ProjectileID.PurificationPowder;
-			Item.shootSpeed = 0;
 			Item.useAmmo = AmmoID.Bullet;
+			Item.shoot = ModContent.ProjectileType<PalladiumRapierProjectile>();
+			Item.shootSpeed = 2.1f;
+			Item.noUseGraphic = true;
+			Item.noMelee = true;
 		}
 
         public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
@@ -48,15 +51,21 @@ namespace Specializations.Items.Melee
 			if (shoot == 0 && source.AmmoItemIdUsed != 0)
 			{
 				SoundEngine.PlaySound(SoundID.Item36);
-				return true;
+				var bulletProjectile = type == ProjectileID.Bullet ? ProjectileID.BulletHighVelocity : type;
+				Projectile.NewProjectile(source, position, velocity, bulletProjectile, damage, knockback, player.whoAmI);
 			}
-			else
-			{
-				return false;
-			}
+			
+			Projectile.NewProjectile(source, position, velocity.SafeNormalize(default) * Item.shootSpeed, ModContent.ProjectileType<PalladiumRapierProjectile>(), damage, knockback, player.whoAmI);
+
+			return false;
 		}
-		
-		public override bool CanConsumeAmmo(Item ammo, Player player)
+
+        public override bool NeedsAmmo(Player player)
+        {
+            return false;
+        }
+
+        public override bool CanConsumeAmmo(Item ammo, Player player)
 		{			
 			shoot += 1;
 			if (shoot > 2)

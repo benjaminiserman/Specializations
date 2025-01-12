@@ -1,4 +1,7 @@
+using Microsoft.Xna.Framework;
+using Specializations.Projectiles;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -13,11 +16,11 @@ namespace Specializations.Items.Melee
 
 		public override void SetDefaults()
 		{
-			Item.damage = 72;          
+			Item.damage = 65;          
 			Item.DamageType = DamageClass.Melee;         
-			Item.width = 60;           
+			Item.width = 63;           
 			Item.height = 60;         
-			Item.useTime = 12;          
+			Item.useTime = 16;          
 			Item.useAnimation = 12;         
 			Item.useStyle = ItemUseStyleID.Rapier;         
 			Item.knockBack = 4;        
@@ -25,9 +28,21 @@ namespace Specializations.Items.Melee
 			Item.rare = 4;              
 			Item.UseSound = SoundID.Item71;      
 			Item.autoReuse = true;   
+			Item.shoot = ModContent.ProjectileType<ChlorophyteRapierProjectile>();
+			Item.shootSpeed = 4.0f;
+			Item.noUseGraphic = true;
+			Item.noMelee = true;
 		}
-		
-		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
+
+        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        {
+			Projectile.NewProjectile(source, position, velocity.RotatedBy(-0.1) * 1.8f, ProjectileID.SporeCloud, damage / 4, knockback, player.whoAmI);
+			Projectile.NewProjectile(source, position, velocity.RotatedBy(+0.1) * 1.8f, ProjectileID.SporeCloud, damage / 4, knockback, player.whoAmI);
+
+			return true;
+        }
+
+        public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			target.AddBuff(Mod.Find<ModBuff>("RapierBleed").Type, 300);
 			target.AddBuff(BuffID.Poisoned, 300);

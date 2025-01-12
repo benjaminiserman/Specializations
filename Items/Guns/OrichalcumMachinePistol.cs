@@ -10,7 +10,7 @@ namespace Specializations.Items.Guns
 	{
 		public override void SetDefaults()
 		{
-			Item.damage = 19;
+			Item.damage = 20;
 			Item.DamageType = DamageClass.Ranged;
 			Item.width = 17;
 			Item.height = 12;
@@ -26,6 +26,10 @@ namespace Specializations.Items.Guns
 			Item.shoot = ProjectileID.PurificationPowder;
 			Item.shootSpeed = 9f;
 			Item.useAmmo = AmmoID.Bullet;
+		}
+
+		public override bool CanConsumeAmmo(Item ammo, Player player) {
+			return Main.rand.NextFloat() >= 0.50f;
 		}
 		
 		public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

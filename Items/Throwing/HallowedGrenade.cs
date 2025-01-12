@@ -38,7 +38,7 @@ namespace Specializations.Items.Throwing
 
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe(5);
+            Recipe recipe = CreateRecipe(3);
             recipe.AddIngredient(ItemID.HallowedBar, 1);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
