@@ -17,7 +17,7 @@ namespace Specializations.Items.Throwing
 			Item.shootSpeed = 6f;
 			Item.damage = 200;
 			Item.knockBack = 10;
-			Item.useStyle = 1;
+			Item.useStyle = ItemUseStyleID.Shoot;
 			Item.useAnimation = 45;
 			Item.useTime = 45;
 			Item.width = 16;

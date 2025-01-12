@@ -11,11 +11,10 @@ namespace Specializations.Projectiles
 	{
 		public override void SetDefaults()
 		{
+			Projectile.CloneDefaults(ProjectileID.JavelinFriendly);
 			Projectile.width = 16;
 			Projectile.height = 16;
 			Projectile.aiStyle = 113;
-			Projectile.friendly = true;
-			Projectile.DamageType = DamageClass.Melee;
 			Projectile.penetrate = 3;
 		}
 
