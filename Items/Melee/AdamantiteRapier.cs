@@ -1,5 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.Audio;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -11,28 +13,28 @@ namespace Specializations.Items.Melee
 		
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Fires lasers");
+			// Tooltip.SetDefault("Fires lasers");
 		}
 
 		public override void SetDefaults()
 		{
-			item.damage = 48;          
-			item.melee = true;         
-			item.width = 44;           
-			item.height = 44;         
-			item.useTime = 19;          
-			item.useAnimation = 19;         
-			item.useStyle = 3;         
-			item.knockBack = 5;        
-			item.value = 92000;   
-			item.rare = 4;              
-			item.UseSound = SoundID.Item1;      
-			item.autoReuse = true;  
-			item.shoot = mod.ProjectileType("RedLaser");
-			item.shootSpeed = 0;
+			Item.damage = 48;          
+			Item.DamageType = DamageClass.Melee/* tModPorter Suggestion: Consider MeleeNoSpeed for no attack speed scaling */;         
+			Item.width = 44;           
+			Item.height = 44;         
+			Item.useTime = 19;          
+			Item.useAnimation = 19;         
+			Item.useStyle = 3;         
+			Item.knockBack = 5;        
+			Item.value = 92000;   
+			Item.rare = 4;              
+			Item.UseSound = SoundID.Item1;      
+			Item.autoReuse = true;  
+			Item.shoot = Mod.Find<ModProjectile>("RedLaser").Type;
+			Item.shootSpeed = 0;
 		}
 		
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
 		{
 			speedX = 10 * player.direction;
 			speedY = 0;
@@ -45,7 +47,7 @@ namespace Specializations.Items.Melee
 			
 			if (shoot)
 			{
-				Main.PlaySound(SoundID.Item91);
+				SoundEngine.PlaySound(SoundID.Item91);
 				return true;
 			}
 			else
@@ -56,11 +58,10 @@ namespace Specializations.Items.Melee
 	
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			Recipe recipe = CreateRecipe();
 			recipe.AddIngredient(ItemID.AdamantiteBar, 8);
 			recipe.AddTile(TileID.MythrilAnvil);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			recipe.Register();
 		}
 	}
 }

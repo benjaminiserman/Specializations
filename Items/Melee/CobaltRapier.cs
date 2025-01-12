@@ -9,39 +9,38 @@ namespace Specializations.Items.Melee
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Inflicts bleeding on hit, and gives the wielder swiftness");
+			// Tooltip.SetDefault("Inflicts bleeding on hit, and gives the wielder swiftness");
 		}
 
 		public override void SetDefaults()
 		{
-			item.damage = 36;          
-			item.melee = true;         
-			item.width = 44;           
-			item.height = 44;         
-			item.useTime = 13;          
-			item.useAnimation = 13;         
-			item.useStyle = 3;         
-			item.knockBack = 4;        
-			item.value = 55200;         
-			item.rare = 4;              
-			item.UseSound = SoundID.Item1;      
-			item.autoReuse = true;   
+			Item.damage = 36;          
+			Item.DamageType = DamageClass.Melee/* tModPorter Suggestion: Consider MeleeNoSpeed for no attack speed scaling */;         
+			Item.width = 44;           
+			Item.height = 44;         
+			Item.useTime = 13;          
+			Item.useAnimation = 13;         
+			Item.useStyle = 3;         
+			Item.knockBack = 4;        
+			Item.value = 55200;         
+			Item.rare = 4;              
+			Item.UseSound = SoundID.Item1;      
+			Item.autoReuse = true;   
 		}
 		
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 		{
 
-			target.AddBuff(mod.BuffType("RapierBleed"), 300);
+			target.AddBuff(Mod.Find<ModBuff>("RapierBleed").Type, 300);
             player.AddBuff(BuffID.Swiftness, 300);
 		}
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			Recipe recipe = CreateRecipe();
 			recipe.AddIngredient(ItemID.CobaltBar, 8);
 			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			recipe.Register();
 		}
 	}
 }

@@ -1,4 +1,5 @@
 ﻿using Terraria;
+using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
@@ -9,21 +10,21 @@ namespace Specializations.Projectiles
     {
         public override void SetDefaults()
         {
-            projectile.CloneDefaults(ProjectileID.ThrowingKnife);
-            projectile.aiStyle = 2;
+            Projectile.CloneDefaults(ProjectileID.ThrowingKnife);
+            Projectile.aiStyle = 2;
         }
 
-        public override void Kill(int timeLeft)
+        public override void OnKill(int timeLeft)
         {
-            Main.PlaySound(0, (int)projectile.position.X, (int)projectile.position.Y); 
-            Vector2 usePos = projectile.position;
+            SoundEngine.PlaySound(SoundID.Dig, Projectile.position); 
+            Vector2 usePos = Projectile.position;
                                                 
             for (int i = 0; i < 6; i++)
             {
                Dust.NewDust(usePos, 8, 8, 1);
             }
 
-            int item = Main.rand.Next(2) == 0 ? Item.NewItem((int)projectile.position.X, (int)projectile.position.Y, projectile.width, projectile.height, mod.ItemType("MythrilThrowingDagger")) : 0;
+            int item = Main.rand.Next(2) == 0 ? Item.NewItem((int)Projectile.position.X, (int)Projectile.position.Y, Projectile.width, Projectile.height, Mod.Find<ModItem>("MythrilThrowingDagger").Type) : 0;
 
             if (Main.netMode == 1 && item >= 0)
             {

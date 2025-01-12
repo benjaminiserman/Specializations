@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using System;
@@ -10,25 +11,25 @@ namespace Specializations.Items.Guns
 	{
 		public override void SetDefaults()
 		{
-			item.damage = 28;
-			item.ranged = true;
-			item.width = 17;
-			item.height = 12;
-			item.useTime = 17;
-			item.useAnimation = 17;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 4;
-			item.value = 64000;
-			item.rare = 4;
-			item.UseSound = SoundID.Item11;
-			item.autoReuse = false;
-			item.shoot = 10;
-			item.shootSpeed = 16f;
-			item.useAmmo = AmmoID.Bullet;
+			Item.damage = 28;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 17;
+			Item.height = 12;
+			Item.useTime = 17;
+			Item.useAnimation = 17;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 4;
+			Item.value = 64000;
+			Item.rare = 4;
+			Item.UseSound = SoundID.Item11;
+			Item.autoReuse = false;
+			Item.shoot = 10;
+			Item.shootSpeed = 16f;
+			Item.useAmmo = AmmoID.Bullet;
 		}
 		
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
 		{
 			Vector2 muzzleOffset = Vector2.Normalize(new Vector2(speedX, speedY-2)) * 25f;
 
@@ -47,11 +48,10 @@ namespace Specializations.Items.Guns
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			Recipe recipe = CreateRecipe();
 			recipe.AddIngredient(ItemID.PalladiumBar, 8);
 			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			recipe.Register();
 		}
 	}
 }

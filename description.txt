@@ -10,6 +10,9 @@ What Specializations offers:
 
 Changelog:
 
+v0.5:
++ Updated to Terraria 1.4.4
+
 v0.4:
 + Added 8 new throwing weapons
 + Cobalt Rapier gives swiftness on hit
@@ -25,7 +28,7 @@ v0.3:
 
 Credits:
 winggar - coding, most art
-Radicalbot - a few sprites
+Aubritor - a few sprites
 
 all of this is possible thanks to
 

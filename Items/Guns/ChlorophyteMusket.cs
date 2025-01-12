@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using System;
@@ -10,16 +11,16 @@ namespace Specializations.Items.Guns
 	{
 		public override void SetDefaults()
 		{
-			item.CloneDefaults(ItemID.Musket);
-			item.damage = 92;
-			item.value = 240000;
-			item.rare = 7;
-			item.useStyle = 5;
-			item.width = 30;
-			item.height = 7;
+			Item.CloneDefaults(ItemID.Musket);
+			Item.damage = 92;
+			Item.value = 240000;
+			Item.rare = 7;
+			Item.useStyle = 5;
+			Item.width = 30;
+			Item.height = 7;
 		}
 		
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
 		{
 			Vector2 muzzleOffset = Vector2.Normalize(new Vector2(speedX, speedY-2)) * 25f;
 
@@ -38,11 +39,10 @@ namespace Specializations.Items.Guns
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			Recipe recipe = CreateRecipe();
 			recipe.AddIngredient(ItemID.ChlorophyteBar, 10);
 			recipe.AddTile(TileID.MythrilAnvil);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			recipe.Register();
 		}
 	}
 }

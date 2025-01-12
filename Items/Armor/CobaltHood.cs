@@ -9,17 +9,17 @@ namespace Specializations.Items.Armor
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("20% increased throwing damage"
-			+ "\n and 20% increased throwing velocity");
+			/* Tooltip.SetDefault("20% increased throwing damage"
+			+ "\n and 20% increased throwing velocity"); */
 		}
 
 		public override void SetDefaults()
 		{
-			item.width = 18;
-			item.height = 18;
-			item.value = 75000;
-			item.rare = 4;
-			item.defense = 6;
+			Item.width = 18;
+			Item.height = 18;
+			Item.value = 75000;
+			Item.rare = 4;
+			Item.defense = 6;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -30,7 +30,7 @@ namespace Specializations.Items.Armor
 		public override void UpdateArmorSet(Player player)
 		{
 			player.setBonus = "15% increased throwing critical strike chance";
-			player.thrownCrit += 7;
+			player.GetCritChance(DamageClass.Throwing) += 7;
 		}
 		
 		public override void ArmorSetShadows(Player player)
@@ -40,17 +40,16 @@ namespace Specializations.Items.Armor
 		
 		public override void UpdateEquip(Player player)
 		{
-			player.thrownDamage *= 1.2f;
-			player.thrownVelocity *= 1.2f;
+			player.GetDamage(DamageClass.Throwing) *= 1.2f;
+			player.ThrownVelocity *= 1.2f;
 		}
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			Recipe recipe = CreateRecipe();
 			recipe.AddIngredient(ItemID.CobaltBar, 10);
 			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			recipe.Register();
 		}
 	}
 }

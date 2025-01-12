@@ -9,35 +9,34 @@ namespace Specializations.Items.Throwing
 	{
 		public override void SetDefaults()
 		{
-			item.shootSpeed = 10f;
-			item.damage = 28;
-			item.knockBack = 0;
-			item.useStyle = 1;
-			item.useAnimation = 19;
-            item.useTime = 19;
-			item.width = 30;
-			item.height = 30;
-			item.maxStack = 999;
-			item.rare = 4;
+			Item.shootSpeed = 10f;
+			Item.damage = 28;
+			Item.knockBack = 0;
+			Item.useStyle = 1;
+			Item.useAnimation = 19;
+            Item.useTime = 19;
+			Item.width = 30;
+			Item.height = 30;
+			Item.maxStack = 999;
+			Item.rare = 4;
 
-			item.consumable = true;
-			item.noUseGraphic = true;
-			item.noMelee = true;
-			item.autoReuse = true;
-			item.thrown = true;
+			Item.consumable = true;
+			Item.noUseGraphic = true;
+			Item.noMelee = true;
+			Item.autoReuse = true;
+			Item.DamageType = DamageClass.Throwing;
 
-			item.UseSound = SoundID.Item1;
-			item.value = 150;
-			item.shoot = mod.ProjectileType("PalladiumThrowingHammer");
+			Item.UseSound = SoundID.Item1;
+			Item.value = 150;
+			Item.shoot = Mod.Find<ModProjectile>("PalladiumThrowingHammer").Type;
 		}
 
         public override void AddRecipes()
         {
-            ModRecipe recipe = new ModRecipe(mod);
+            Recipe recipe = CreateRecipe(25);
             recipe.AddIngredient(ItemID.PalladiumBar, 1);
             recipe.AddTile(TileID.Anvils);
-            recipe.SetResult(this, 25);
-            recipe.AddRecipe();
+            recipe.Register();
         }
     }
 }

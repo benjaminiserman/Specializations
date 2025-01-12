@@ -30,13 +30,13 @@ namespace Specializations
 		{
 			if (rapierDebuff)
 			{
-				if (player.lifeRegen > 0)
+				if (Player.lifeRegen > 0)
 				{
-					player.lifeRegen = 0;
+					Player.lifeRegen = 0;
 				}
 
-				player.lifeRegenTime = 0;
-				player.lifeRegen -= 6;
+				Player.lifeRegenTime = 0;
+				Player.lifeRegen -= 6;
 			}
 		}
 	}

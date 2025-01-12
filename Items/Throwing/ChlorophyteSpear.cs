@@ -9,35 +9,34 @@ namespace Specializations.Items.Throwing
 	{
 		public override void SetDefaults()
 		{
-			item.shootSpeed = 13f;
-			item.damage = 64;
-			item.knockBack = 5f;
-			item.useStyle = 1;
-			item.useAnimation = 25;
-			item.useTime = 25;
-			item.width = 38;
-			item.height = 38;
-			item.maxStack = 999;
-			item.rare = 7;
+			Item.shootSpeed = 13f;
+			Item.damage = 64;
+			Item.knockBack = 5f;
+			Item.useStyle = 1;
+			Item.useAnimation = 25;
+			Item.useTime = 25;
+			Item.width = 38;
+			Item.height = 38;
+			Item.maxStack = 999;
+			Item.rare = 7;
 
-			item.consumable = true;
-			item.noUseGraphic = true;
-			item.noMelee = true;
-			item.autoReuse = true;
-			item.thrown = true;
+			Item.consumable = true;
+			Item.noUseGraphic = true;
+			Item.noMelee = true;
+			Item.autoReuse = true;
+			Item.DamageType = DamageClass.Throwing;
 
-			item.UseSound = SoundID.Item1;
-			item.value = 150;
-            item.shoot = mod.ProjectileType("ChlorophyteSpear");
+			Item.UseSound = SoundID.Item1;
+			Item.value = 150;
+            Item.shoot = Mod.Find<ModProjectile>("ChlorophyteSpear").Type;
 		}
 
         public override void AddRecipes()
         {
-            ModRecipe recipe = new ModRecipe(mod);
+            Recipe recipe = CreateRecipe(25);
             recipe.AddIngredient(ItemID.ChlorophyteBar, 1);
             recipe.AddTile(TileID.MythrilAnvil);
-            recipe.SetResult(this, 25);
-            recipe.AddRecipe();
+            recipe.Register();
         }
     }
 }

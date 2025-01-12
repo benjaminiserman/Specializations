@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using System;
@@ -10,25 +11,25 @@ namespace Specializations.Items.Guns
 	{
 		public override void SetDefaults()
 		{
-			item.damage = 18;
-			item.ranged = true;
-			item.width = 30;
-			item.height = 7;
-			item.useTime = 49;
-			item.useAnimation = 49;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 11;
-			item.value = 96000;
-			item.rare = 4;
-			item.UseSound = SoundID.Item36;
-			item.autoReuse = false;
-			item.shoot = 10;
-			item.shootSpeed = 16f;
-			item.useAmmo = AmmoID.Bullet;
+			Item.damage = 18;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 30;
+			Item.height = 7;
+			Item.useTime = 49;
+			Item.useAnimation = 49;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 11;
+			Item.value = 96000;
+			Item.rare = 4;
+			Item.UseSound = SoundID.Item36;
+			Item.autoReuse = false;
+			Item.shoot = 10;
+			Item.shootSpeed = 16f;
+			Item.useAmmo = AmmoID.Bullet;
 		}
 		
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
 		{
 			int numberProjectiles = 7 + Main.rand.Next(2); 
 
@@ -48,11 +49,10 @@ namespace Specializations.Items.Guns
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			Recipe recipe = CreateRecipe();
 			recipe.AddIngredient(ItemID.AdamantiteBar, 8);
 			recipe.AddTile(TileID.MythrilAnvil);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			recipe.Register();
 		}
 	}
 }

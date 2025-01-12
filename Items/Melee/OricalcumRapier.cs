@@ -1,5 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.Audio;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -11,28 +13,28 @@ namespace Specializations.Items.Melee
 		
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Randomly fires a petal that can go through walls");
+			// Tooltip.SetDefault("Randomly fires a petal that can go through walls");
 		}
 
 		public override void SetDefaults()
 		{
-			item.damage = 43;          
-			item.melee = true;         
-			item.width = 44;           
-			item.height = 44;         
-			item.useTime = 20;          
-			item.useAnimation = 20;         
-			item.useStyle = 3;         
-			item.knockBack = 5;        
-			item.value = 84333;
-			item.rare = 4;              
-			item.UseSound = SoundID.Item1;      
-			item.autoReuse = true;  
-			item.shoot = ProjectileID.FlowerPetal;
-			item.shootSpeed = 0;
+			Item.damage = 43;          
+			Item.DamageType = DamageClass.Melee/* tModPorter Suggestion: Consider MeleeNoSpeed for no attack speed scaling */;         
+			Item.width = 44;           
+			Item.height = 44;         
+			Item.useTime = 20;          
+			Item.useAnimation = 20;         
+			Item.useStyle = 3;         
+			Item.knockBack = 5;        
+			Item.value = 84333;
+			Item.rare = 4;              
+			Item.UseSound = SoundID.Item1;      
+			Item.autoReuse = true;  
+			Item.shoot = ProjectileID.FlowerPetal;
+			Item.shootSpeed = 0;
 		}
 		
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
 		{
 			shoot = (Main.rand.Next(2) == 0);
 		
@@ -47,7 +49,7 @@ namespace Specializations.Items.Melee
 			
 			if (shoot)
 			{
-				Main.PlaySound(SoundID.Item71);
+				SoundEngine.PlaySound(SoundID.Item71);
 				return true;
 			}
 			else
@@ -58,11 +60,10 @@ namespace Specializations.Items.Melee
 		
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			Recipe recipe = CreateRecipe();
 			recipe.AddIngredient(ItemID.OrichalcumBar, 8);
 			recipe.AddTile(TileID.MythrilAnvil);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			recipe.Register();
 		}
 	}
 }

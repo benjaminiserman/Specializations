@@ -9,40 +9,39 @@ namespace Specializations.Items.Throwing
 	{
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("Three shall be the number of which you count, after pulling the holy pin");
+            // Tooltip.SetDefault("Three shall be the number of which you count, after pulling the holy pin");
         }
 
         public override void SetDefaults()
 		{
-			item.shootSpeed = 6f;
-			item.damage = 200;
-			item.knockBack = 10;
-			item.useStyle = 1;
-			item.useAnimation = 45;
-			item.useTime = 45;
-			item.width = 16;
-			item.height = 20;
-			item.maxStack = 999;
-			item.rare = 4;
+			Item.shootSpeed = 6f;
+			Item.damage = 200;
+			Item.knockBack = 10;
+			Item.useStyle = 1;
+			Item.useAnimation = 45;
+			Item.useTime = 45;
+			Item.width = 16;
+			Item.height = 20;
+			Item.maxStack = 999;
+			Item.rare = 4;
 
-			item.consumable = true;
-			item.noUseGraphic = true;
-			item.noMelee = true;
-			item.autoReuse = true;
-			item.thrown = true;
+			Item.consumable = true;
+			Item.noUseGraphic = true;
+			Item.noMelee = true;
+			Item.autoReuse = true;
+			Item.DamageType = DamageClass.Throwing;
 
-			item.UseSound = SoundID.Item1;
-			item.value = 150;
-			item.shoot = mod.ProjectileType("HallowedGrenade");
+			Item.UseSound = SoundID.Item1;
+			Item.value = 150;
+			Item.shoot = Mod.Find<ModProjectile>("HallowedGrenade").Type;
 		}
 
         public override void AddRecipes()
         {
-            ModRecipe recipe = new ModRecipe(mod);
+            Recipe recipe = CreateRecipe(5);
             recipe.AddIngredient(ItemID.HallowedBar, 1);
             recipe.AddTile(TileID.MythrilAnvil);
-            recipe.SetResult(this, 5);
-            recipe.AddRecipe();
+            recipe.Register();
         }
     }
 }

@@ -9,17 +9,17 @@ namespace Specializations.Items.Armor
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("15% increased throwing damage"
-                + "\n 10% increased throwing critical strike chance");
+			/* Tooltip.SetDefault("15% increased throwing damage"
+                + "\n 10% increased throwing critical strike chance"); */
 		}
 
 		public override void SetDefaults()
 		{
-			item.width = 18;
-			item.height = 18;
-			item.value = 150000;
-			item.rare = 4;
-			item.defense = 11;
+			Item.width = 18;
+			Item.height = 18;
+			Item.value = 150000;
+			Item.rare = 4;
+			Item.defense = 11;
 		}
 
 		public override bool IsArmorSet(Item head, Item body, Item legs)
@@ -36,17 +36,16 @@ namespace Specializations.Items.Armor
 		
 		public override void UpdateEquip(Player player)
 		{
-			player.thrownDamage *= 1.15f;
-            player.thrownCrit += 10;
+			player.GetDamage(DamageClass.Throwing) *= 1.15f;
+            player.GetCritChance(DamageClass.Throwing) += 10;
 		}
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			Recipe recipe = CreateRecipe();
 			recipe.AddIngredient(ItemID.TitaniumBar, 13);
 			recipe.AddTile(TileID.MythrilAnvil);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			recipe.Register();
 		}
 	}
 }

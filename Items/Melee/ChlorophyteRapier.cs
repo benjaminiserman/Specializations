@@ -9,38 +9,37 @@ namespace Specializations.Items.Melee
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Inflicts bleeding and poison on hit");
+			// Tooltip.SetDefault("Inflicts bleeding and poison on hit");
 		}
 
 		public override void SetDefaults()
 		{
-			item.damage = 72;          
-			item.melee = true;         
-			item.width = 60;           
-			item.height = 60;         
-			item.useTime = 12;          
-			item.useAnimation = 12;         
-			item.useStyle = 3;         
-			item.knockBack = 4;        
-			item.value = 184000;         
-			item.rare = 4;              
-			item.UseSound = SoundID.Item71;      
-			item.autoReuse = true;   
+			Item.damage = 72;          
+			Item.DamageType = DamageClass.Melee/* tModPorter Suggestion: Consider MeleeNoSpeed for no attack speed scaling */;         
+			Item.width = 60;           
+			Item.height = 60;         
+			Item.useTime = 12;          
+			Item.useAnimation = 12;         
+			Item.useStyle = 3;         
+			Item.knockBack = 4;        
+			Item.value = 184000;         
+			Item.rare = 4;              
+			Item.UseSound = SoundID.Item71;      
+			Item.autoReuse = true;   
 		}
 		
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 		{
-			target.AddBuff(mod.BuffType("RapierBleed"), 300);
+			target.AddBuff(Mod.Find<ModBuff>("RapierBleed").Type, 300);
 			target.AddBuff(BuffID.Poisoned, 300);
 		}
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			Recipe recipe = CreateRecipe();
 			recipe.AddIngredient(ItemID.ChlorophyteBar, 8);
 			recipe.AddTile(TileID.MythrilAnvil);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			recipe.Register();
 		}
 	}
 }

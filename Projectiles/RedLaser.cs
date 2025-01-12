@@ -9,9 +9,9 @@ namespace Specializations.Projectiles
 	{
 		public override void SetDefaults()
 		{
-			projectile.CloneDefaults(ProjectileID.PurpleLaser);
-			aiType = ProjectileID.PurpleLaser;
-			projectile.penetrate = 3;
+			Projectile.CloneDefaults(ProjectileID.PurpleLaser);
+			AIType = ProjectileID.PurpleLaser;
+			Projectile.penetrate = 3;
 		}
 	}
 }

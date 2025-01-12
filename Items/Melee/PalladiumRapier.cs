@@ -1,5 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.Audio;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -11,29 +13,29 @@ namespace Specializations.Items.Melee
 		
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Randomly fires bullets");
+			// Tooltip.SetDefault("Randomly fires bullets");
 		}
 
 		public override void SetDefaults()
 		{
-			item.damage = 39;          
-			item.melee = true;         
-			item.width = 44;           
-			item.height = 44;         
-			item.useTime = 16;          
-			item.useAnimation = 16;         
-			item.useStyle = 3;         
-			item.knockBack = 5;        
-			item.value = 61333;   
-			item.rare = 4;              
-			item.UseSound = SoundID.Item1;      
-			item.autoReuse = true;  
-			item.shoot = 10;
-			item.shootSpeed = 0;
-			item.useAmmo = AmmoID.Bullet;
+			Item.damage = 39;          
+			Item.DamageType = DamageClass.Melee/* tModPorter Suggestion: Consider MeleeNoSpeed for no attack speed scaling */;         
+			Item.width = 44;           
+			Item.height = 44;         
+			Item.useTime = 16;          
+			Item.useAnimation = 16;         
+			Item.useStyle = 3;         
+			Item.knockBack = 5;        
+			Item.value = 61333;   
+			Item.rare = 4;              
+			Item.UseSound = SoundID.Item1;      
+			Item.autoReuse = true;  
+			Item.shoot = 10;
+			Item.shootSpeed = 0;
+			Item.useAmmo = AmmoID.Bullet;
 		}
 		
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
 		{
 			if (type == ProjectileID.Bullet) 
 			{
@@ -51,7 +53,7 @@ namespace Specializations.Items.Melee
 			
 			if (shoot)
 			{
-				Main.PlaySound(SoundID.Item36);
+				SoundEngine.PlaySound(SoundID.Item36);
 				return true;
 			}
 			else
@@ -60,7 +62,7 @@ namespace Specializations.Items.Melee
 			}
 		}
 		
-		public override bool ConsumeAmmo(Player player)
+		public override bool CanConsumeAmmo(Item ammo, Player player)
 		{			
 			shoot = (Main.rand.Next(3) == 0);		
 			
@@ -76,11 +78,10 @@ namespace Specializations.Items.Melee
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			Recipe recipe = CreateRecipe();
 			recipe.AddIngredient(ItemID.PalladiumBar, 8);
 			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			recipe.Register();
 		}
 	}
 }

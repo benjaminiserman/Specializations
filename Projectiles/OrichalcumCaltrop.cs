@@ -9,7 +9,7 @@ namespace Specializations.Projectiles
     {
         public override void SetDefaults()
         {
-            projectile.CloneDefaults(ProjectileID.SpikyBall);
+            Projectile.CloneDefaults(ProjectileID.SpikyBall);
         }
     }
 }

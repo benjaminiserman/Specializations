@@ -6,7 +6,7 @@ namespace Specializations
 	{
 		public Specializations()
 		{
-			Properties = new ModProperties()
+			Properties/* tModPorter Note: Removed. Instead, assign the properties directly (ContentAutoloadingEnabled, GoreAutoloadingEnabled, MusicAutoloadingEnabled, and BackgroundAutoloadingEnabled) */ = new ModProperties()
 			{
 				Autoload = true,
 				AutoloadGores = true,

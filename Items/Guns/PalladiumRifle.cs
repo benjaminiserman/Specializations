@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using System;
@@ -11,31 +12,31 @@ namespace Specializations.Items.Guns
 		
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Only the first shot consumes ammo.");
+			// Tooltip.SetDefault("Only the first shot consumes ammo.");
 		}
 		
 		public override void SetDefaults()
 		{
-			item.damage = 24;
-			item.ranged = true;
-			item.width = 30;
-			item.height = 7;
-			item.useTime = 5;
-			item.useAnimation = 15;
-			item.reuseDelay = 17;
-			item.useStyle = 5;
-			item.noMelee = true;
-			item.knockBack = 0;
-			item.value = 80000;
-			item.rare = 4;
-			item.UseSound = SoundID.Item31;
-			item.autoReuse = true;
-			item.shoot = 10;
-			item.shootSpeed = 16f;
-			item.useAmmo = AmmoID.Bullet;
+			Item.damage = 24;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 30;
+			Item.height = 7;
+			Item.useTime = 5;
+			Item.useAnimation = 15;
+			Item.reuseDelay = 17;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 0;
+			Item.value = 80000;
+			Item.rare = 4;
+			Item.UseSound = SoundID.Item31;
+			Item.autoReuse = true;
+			Item.shoot = 10;
+			Item.shootSpeed = 16f;
+			Item.useAmmo = AmmoID.Bullet;
 		}
 		
-		public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+		public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
 		{
 			Vector2 muzzleOffset = Vector2.Normalize(new Vector2(speedX, speedY-2)) * 25f;
 
@@ -47,9 +48,9 @@ namespace Specializations.Items.Guns
 			return true;
 		}
 		
-		public override bool ConsumeAmmo(Player player)
+		public override bool CanConsumeAmmo(Item ammo, Player player)
 		{
-			return !(player.itemAnimation < item.useAnimation - 2);
+			return !(player.itemAnimation < Item.useAnimation - 2);
 		}
 		
 		public override Vector2?HoldoutOffset()
@@ -59,11 +60,10 @@ namespace Specializations.Items.Guns
 
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
+			Recipe recipe = CreateRecipe();
 			recipe.AddIngredient(ItemID.PalladiumBar, 10);
 			recipe.AddTile(TileID.Anvils);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			recipe.Register();
 		}
 	}
 }

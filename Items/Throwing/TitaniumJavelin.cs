@@ -9,35 +9,34 @@ namespace Specializations.Items.Throwing
 	{
 		public override void SetDefaults()
 		{
-			item.shootSpeed = 12.5f;
-			item.damage = 45;
-			item.knockBack = 5f;
-			item.useStyle = 1;
-			item.useAnimation = 23;
-			item.useTime = 23;
-			item.width = 40;
-			item.height = 40;
-			item.maxStack = 999;
-			item.rare = 4;
+			Item.shootSpeed = 12.5f;
+			Item.damage = 45;
+			Item.knockBack = 5f;
+			Item.useStyle = 1;
+			Item.useAnimation = 23;
+			Item.useTime = 23;
+			Item.width = 40;
+			Item.height = 40;
+			Item.maxStack = 999;
+			Item.rare = 4;
 
-			item.consumable = true;
-			item.noUseGraphic = true;
-			item.noMelee = true;
-			item.autoReuse = true;
-			item.thrown = true;
+			Item.consumable = true;
+			Item.noUseGraphic = true;
+			Item.noMelee = true;
+			Item.autoReuse = true;
+			Item.DamageType = DamageClass.Throwing;
 
-			item.UseSound = SoundID.Item1;
-			item.value = 150;
-            item.shoot = mod.ProjectileType("TitaniumJavelin");
+			Item.UseSound = SoundID.Item1;
+			Item.value = 150;
+            Item.shoot = Mod.Find<ModProjectile>("TitaniumJavelin").Type;
 		}
 
         public override void AddRecipes()
         {
-            ModRecipe recipe = new ModRecipe(mod);
+            Recipe recipe = CreateRecipe(25);
             recipe.AddIngredient(ItemID.TitaniumBar, 1);
             recipe.AddTile(TileID.MythrilAnvil);
-            recipe.SetResult(this, 25);
-            recipe.AddRecipe();
+            recipe.Register();
         }
     }
 }
