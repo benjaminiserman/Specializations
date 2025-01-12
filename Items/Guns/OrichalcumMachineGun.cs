@@ -3,11 +3,10 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using System;
 
 namespace Specializations.Items.Guns
 {
-	public class OrichalcumMachineGun : ModItem
+    public class OrichalcumMachineGun : ModItem
 	{
 		public override void SetDefaults()
 		{
@@ -31,22 +30,22 @@ namespace Specializations.Items.Guns
 		
 		public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
 		{
-			Vector2 muzzleOffset = Vector2.Normalize(new Vector2(speedX, speedY-2)) * 25f;
+			Vector2 muzzleOffset = Vector2.Normalize(new Vector2(velocity.X, velocity.Y - 2)) * 25f;
 
 			if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
 			{
 				position += muzzleOffset;
 			}
 
-			Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(5));
-			speedX = perturbedSpeed.X;
-			speedY = perturbedSpeed.Y;
+			Vector2 perturbedSpeed = velocity.RotatedByRandom(MathHelper.ToRadians(5));
+			
+			Projectile.NewProjectile(source, position, perturbedSpeed, type, damage, knockback, player.whoAmI);
 
-			return true;
+			return false;
 		}
 		
 		
-		public override Vector2?HoldoutOffset()
+		public override Vector2? HoldoutOffset()
 		{
 			return new Vector2(0, 1);
 		}

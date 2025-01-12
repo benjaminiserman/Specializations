@@ -1,11 +1,10 @@
-﻿using Specializations.Projectiles;
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Specializations.Items.Throwing
 {
-	public class MythrilThrowingDagger : ModItem
+    public class MythrilThrowingDagger : ModItem
 	{
 		public override void SetDefaults()
 		{
@@ -24,7 +23,7 @@ namespace Specializations.Items.Throwing
 			Item.noUseGraphic = true;
 			Item.noMelee = true;
 			Item.autoReuse = true;
-			Item.DamageType = DamageClass.Throwing;
+			Item.DamageType = DamageClass.Ranged;
 
 			Item.UseSound = SoundID.Item1;
 			Item.value = 150;

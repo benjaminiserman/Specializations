@@ -1,11 +1,10 @@
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Specializations.Items.Melee
 {
-	public class CobaltRapier : ModItem
+    public class CobaltRapier : ModItem
 	{
 		public override void SetStaticDefaults()
 		{

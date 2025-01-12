@@ -1,11 +1,10 @@
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Specializations.Items.Melee
 {
-	public class TitaniumRapier : ModItem
+    public class TitaniumRapier : ModItem
 	{
 		public override void SetStaticDefaults()
 		{

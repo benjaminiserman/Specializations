@@ -1,5 +1,4 @@
-﻿using Specializations.Items.Throwing;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -7,7 +6,7 @@ using Terraria.ModLoader;
 
 namespace Specializations.Projectiles
 {
-	public class ChlorophyteSpear : ModProjectile
+    public class ChlorophyteSpear : ModProjectile
 	{
 		public override void SetDefaults()
 		{

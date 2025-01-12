@@ -3,11 +3,10 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using System;
 
 namespace Specializations.Items.Guns
 {
-	public class MythrilShotgun : ModItem
+    public class MythrilShotgun : ModItem
 	{
 		public override void SetDefaults()
 		{
@@ -35,14 +34,14 @@ namespace Specializations.Items.Guns
 
 			for (int i = 0; i < numberProjectiles; i++)
 			{
-				Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(7));
-				Projectile.NewProjectile(position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, type, damage, knockBack, player.whoAmI);
+				Vector2 perturbedSpeed = velocity.RotatedByRandom(MathHelper.ToRadians(7));
+				Projectile.NewProjectile(source, position, perturbedSpeed, type, damage, knockback, player.whoAmI);
 			}
 
 			return false;
 		}
 		
-		public override Vector2?HoldoutOffset()
+		public override Vector2? HoldoutOffset()
 		{
 			return new Vector2(0, 1);
 		}
