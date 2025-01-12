@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using Specializations.Projectiles;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -33,7 +34,7 @@ namespace Specializations.Items.Guns
 		{
 			if (type == ProjectileID.Bullet) 
 			{
-				type = Mod.Find<ModProjectile>("RedLaser").Type;
+				type = ModContent.ProjectileType<RedLaser>();
 			}
 			
 			Vector2 muzzleOffset = Vector2.Normalize(new Vector2(velocity.X, velocity.Y - 2)) * 25f;

@@ -1,0 +1,180 @@
+Buffs: {
+	RapierBleed: {
+		DisplayName: Rapier Bleed
+		Description: Mods.Specializations.Buffs.RapierBleed.Description
+	}
+}
+
+Items: {
+	AdamantiteBlaster: {
+		DisplayName: Adamantite Blaster
+		Tooltip: ""
+	}
+
+	AdamantiteShotgun: {
+		DisplayName: Adamantite Shotgun
+		Tooltip: ""
+	}
+
+	ChlorophyteFlintlock: {
+		DisplayName: Chlorophyte Flintlock
+		Tooltip: ""
+	}
+
+	ChlorophyteMusket: {
+		DisplayName: Chlorophyte Musket
+		Tooltip: ""
+	}
+
+	CobaltCarbine: {
+		DisplayName: Cobalt Carbine
+		Tooltip: ""
+	}
+
+	CobaltPistol: {
+		DisplayName: Cobalt Pistol
+		Tooltip: ""
+	}
+
+	HallowedMachinePistol: {
+		DisplayName: Hallowed Machine Pistol
+		Tooltip: ""
+	}
+
+	HallowedRifle: {
+		DisplayName: Hallowed Rifle
+		Tooltip: ""
+	}
+
+	MythrilRevolver: {
+		DisplayName: Mythril Revolver
+		Tooltip: ""
+	}
+
+	MythrilShotgun: {
+		DisplayName: Mythril Shotgun
+		Tooltip: ""
+	}
+
+	OrichalcumMachineGun: {
+		DisplayName: Orichalcum Machine Gun
+		Tooltip: ""
+	}
+
+	OrichalcumMachinePistol: {
+		DisplayName: Orichalcum Machine Pistol
+		Tooltip: ""
+	}
+
+	PalladiumMagnum: {
+		DisplayName: Palladium Magnum
+		Tooltip: ""
+	}
+
+	PalladiumRifle: {
+		DisplayName: Palladium Rifle
+		Tooltip: ""
+	}
+
+	TitaniumBlaster: {
+		DisplayName: Titanium Blaster
+		Tooltip: ""
+	}
+
+	TitaniumCarbine: {
+		DisplayName: Titanium Carbine
+		Tooltip: ""
+	}
+
+	AdamantiteRapier: {
+		DisplayName: Adamantite Rapier
+		Tooltip: ""
+	}
+
+	ChlorophyteRapier: {
+		DisplayName: Chlorophyte Rapier
+		Tooltip: ""
+	}
+
+	CobaltRapier: {
+		DisplayName: Cobalt Rapier
+		Tooltip: ""
+	}
+
+	HallowedRapier: {
+		DisplayName: Hallowed Rapier
+		Tooltip: ""
+	}
+
+	MythrilRapier: {
+		DisplayName: Mythril Rapier
+		Tooltip: ""
+	}
+
+	OrichalcumRapier: {
+		DisplayName: Orichalcum Rapier
+		Tooltip: ""
+	}
+
+	PalladiumRapier: {
+		DisplayName: Palladium Rapier
+		Tooltip: ""
+	}
+
+	TitaniumRapier: {
+		DisplayName: Titanium Rapier
+		Tooltip: ""
+	}
+
+	AdamantiteBone: {
+		DisplayName: Adamantite Bone
+		Tooltip: ""
+	}
+
+	ChlorophyteSpear: {
+		DisplayName: Chlorophyte Spear
+		Tooltip: ""
+	}
+
+	CobaltShuriken: {
+		DisplayName: Cobalt Shuriken
+		Tooltip: ""
+	}
+
+	HallowedGrenade: {
+		DisplayName: Hallowed Grenade
+		Tooltip: ""
+	}
+
+	MythrilThrowingDagger: {
+		DisplayName: Mythril Throwing Dagger
+		Tooltip: ""
+	}
+
+	OrichalcumCaltrop: {
+		DisplayName: Orichalcum Caltrop
+		Tooltip: ""
+	}
+
+	PalladiumThrowingHammer: {
+		DisplayName: Palladium Throwing Hammer
+		Tooltip: ""
+	}
+
+	TitaniumJavelin: {
+		DisplayName: Titanium Javelin
+		Tooltip: ""
+	}
+}
+
+Projectiles: {
+	AdamantiteBoneProjectile.DisplayName: Adamantite Bone Projectile
+	ChlorophyteSpearProjectile.DisplayName: Chlorophyte Spear Projectile
+	CobaltShurikenProjectile.DisplayName: Cobalt Shuriken Projectile
+	HallowedGrenadeProjectile.DisplayName: Hallowed Grenade Projectile
+	MythrilThrowingDaggerProjectile.DisplayName: Mythril Throwing Dagger Projectile
+	OrichalcumCaltropProjectile.DisplayName: Orichalcum Caltrop Projectile
+	PalladiumThrowingHammerProjectile.DisplayName: Palladium Throwing Hammer Projectile
+	RedLaser.DisplayName: Red Laser
+	TitaniumJavelinProjectile.DisplayName: Titanium Javelin Projectile
+}

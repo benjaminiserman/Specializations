@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Specializations.Projectiles
 {
-    public class OrichalcumCaltrop : ModProjectile
+    public class OrichalcumCaltropProjectile : ModProjectile
     {
         public override void SetDefaults()
         {

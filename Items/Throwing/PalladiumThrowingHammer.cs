@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using Specializations.Projectiles;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -27,7 +28,7 @@ namespace Specializations.Items.Throwing
 
 			Item.UseSound = SoundID.Item1;
 			Item.value = 150;
-			Item.shoot = Mod.Find<ModProjectile>("PalladiumThrowingHammer").Type;
+			Item.shoot = ModContent.ProjectileType<PalladiumThrowingHammerProjectile>();
 		}
 
         public override void AddRecipes()

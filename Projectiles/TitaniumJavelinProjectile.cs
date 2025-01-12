@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Specializations.Items.Throwing;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -6,7 +7,7 @@ using Terraria.ModLoader;
 
 namespace Specializations.Projectiles
 {
-    public class ChlorophyteSpear : ModProjectile
+    public class TitaniumJavelinProjectile : ModProjectile
 	{
 		public override void SetDefaults()
 		{
@@ -50,15 +51,19 @@ namespace Specializations.Projectiles
 				usePos -= rotVector * 8f;
 			}
 
-			int item = 
-                    Main.rand.Next(18) == 0
-					? Item.NewItem((int)Projectile.position.X, (int)Projectile.position.Y, Projectile.width, Projectile.height, Mod.Find<ModItem>("ChlorophyteSpear").Type)
-					: 0;
+			if (Projectile.owner == Main.myPlayer) 
+            {
+				var item = 0;
+				if (Main.rand.NextBool(18)) 
+                {
+					item = Item.NewItem(Projectile.GetSource_DropAsItem(), Projectile.getRect(), ModContent.ItemType<TitaniumJavelin>());
+				}
 
-			if (Main.netMode == 1 && item >= 0)
-			{
-				NetMessage.SendData(MessageID.SyncItem, -1, -1, null, item, 1f);
-			}
+				if (Main.netMode == NetmodeID.MultiplayerClient && item >= 0) 
+                {
+					NetMessage.SendData(MessageID.SyncItem, -1, -1, null, item, 1f);
+				}
+            }
 		}
 
 		public bool isStickingToTarget
@@ -76,7 +81,7 @@ namespace Specializations.Projectiles
 		public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
 		{
 			isStickingToTarget = true;
-			targetWhoAmI = (float)target.whoAmI; 
+			targetWhoAmI = target.whoAmI; 
 			Projectile.velocity =
 				(target.Center - Projectile.Center) *
 				0.75f; 
@@ -85,7 +90,6 @@ namespace Specializations.Projectiles
 
 			Projectile.damage = 0; 
 
-			
 			int maxStickingJavelins = 6; 
 			Point[] stickingJavelins = new Point[maxStickingJavelins];
 			int javelinIndex = 0; 
@@ -97,8 +101,8 @@ namespace Specializations.Projectiles
 				    && currentProjectile.owner == Main.myPlayer
 				    && currentProjectile.type == Projectile.type
 				    && currentProjectile.ai[0] == 1f 
-				    && currentProjectile.ai[1] == (float)target.whoAmI
-				) 
+				    && currentProjectile.ai[1] == target.whoAmI
+                ) 
 				{
 					stickingJavelins[javelinIndex++] =
 						new Point(i, currentProjectile.timeLeft); 
@@ -127,10 +131,8 @@ namespace Specializations.Projectiles
 			}
 		}
 
-		
 		private const float maxTicks = 45f;
 
-		
 		private const int alphaReduction = 25;
 
 		public override void AI()
@@ -177,8 +179,8 @@ namespace Specializations.Projectiles
 				Projectile.localAI[0] += 1f;
 				hitEffect = Projectile.localAI[0] % 30f == 0f;
 				int projTargetIndex = (int)targetWhoAmI;
-				if (Projectile.localAI[0] >= (float)(60 * aiFactor)
-				    || (projTargetIndex < 0 || projTargetIndex >= 200))
+				if (Projectile.localAI[0] >= 60 * aiFactor
+                    || projTargetIndex < 0 || projTargetIndex >= 200)
 				{
 					killProj = true;
 				}

@@ -3,10 +3,11 @@ using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
+using Specializations.Items.Throwing;
 
 namespace Specializations.Projectiles
 {
-    public class MythrilThrowingDagger : ModProjectile
+    public class MythrilThrowingDaggerProjectile : ModProjectile
     {
         public override void SetDefaults()
         {
@@ -24,11 +25,18 @@ namespace Specializations.Projectiles
                Dust.NewDust(usePos, 8, 8, 1);
             }
 
-            int item = Main.rand.Next(2) == 0 ? Item.NewItem((int)Projectile.position.X, (int)Projectile.position.Y, Projectile.width, Projectile.height, Mod.Find<ModItem>("MythrilThrowingDagger").Type) : 0;
-
-            if (Main.netMode == 1 && item >= 0)
+            if (Projectile.owner == Main.myPlayer) 
             {
-                NetMessage.SendData(MessageID.SyncItem, -1, -1, null, item, 1f);
+				var item = 0;
+				if (Main.rand.NextBool(2)) 
+                {
+					item = Item.NewItem(Projectile.GetSource_DropAsItem(), Projectile.getRect(), ModContent.ItemType<MythrilThrowingDagger>());
+				}
+
+				if (Main.netMode == NetmodeID.MultiplayerClient && item >= 0) 
+                {
+					NetMessage.SendData(MessageID.SyncItem, -1, -1, null, item, 1f);
+				}
             }
         }
     }

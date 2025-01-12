@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using Specializations.Projectiles;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
@@ -28,7 +29,7 @@ namespace Specializations.Items.Melee
 			Item.rare = 4;              
 			Item.UseSound = SoundID.Item1;      
 			Item.autoReuse = true;
-			Item.shoot = Mod.Find<ModProjectile>("RedLaser").Type;
+			Item.shoot = ModContent.ProjectileType<RedLaser>();
 			Item.shootSpeed = 0;			
 		}
 
