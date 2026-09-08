@@ -1,0 +1,196 @@
+Buffs: {
+	RapierBleed: {
+		DisplayName: Sangrado del estoque
+		Description: Perdiendo vida
+	}
+}
+
+Items: {
+	AdamantiteBlaster: {
+		DisplayName: Desintegrador de adamantita
+		Tooltip: ""
+	}
+
+	AdamantiteShotgun: {
+		DisplayName: Escopeta de adamantita
+		Tooltip: ""
+	}
+
+	ChlorophyteFlintlock: {
+		DisplayName: Pistola de pedernal de clorofita
+		Tooltip: ""
+	}
+
+	ChlorophyteMusket: {
+		DisplayName: Mosquete de clorofita
+		Tooltip: ""
+	}
+
+	CobaltCarbine: {
+		DisplayName: Carabina de cobalto
+		Tooltip: ""
+	}
+
+	CobaltPistol: {
+		DisplayName: Pistola de cobalto
+		Tooltip: ""
+	}
+
+	HallowedMachinePistol: {
+		DisplayName: Pistola ametralladora sagrada
+		Tooltip: ""
+	}
+
+	HallowedRifle: {
+		DisplayName: Fusil sagrado
+		Tooltip: Dispara láseres rojos ardientes
+	}
+
+	MythrilRevolver: {
+		DisplayName: Revólver de mithril
+		Tooltip: ""
+	}
+
+	MythrilShotgun: {
+		DisplayName: Escopeta de mithril
+		Tooltip: ""
+	}
+
+	OrichalcumMachineGun: {
+		DisplayName: Ametralladora de oricalco
+		Tooltip: Probabilidad del 40% de ahorrar munición
+	}
+
+	OrichalcumMachinePistol: {
+		DisplayName: Pistola ametralladora de oricalco
+		Tooltip: Probabilidad del 50% de ahorrar munición
+	}
+
+	PalladiumMagnum: {
+		DisplayName: Magnum de paladio
+		Tooltip: ""
+	}
+
+	PalladiumRifle: {
+		DisplayName: Fusil de paladio
+		Tooltip:
+			'''
+			Ráfaga de tres disparos
+			Solo el primer disparo consume munición
+			'''
+	}
+
+	TitaniumBlaster: {
+		DisplayName: Desintegrador de titanio
+		Tooltip: Dispara potentes balas explosivas
+	}
+
+	TitaniumCarbine: {
+		DisplayName: Carabina de titanio
+		Tooltip: ""
+	}
+
+	AdamantiteRapier: {
+		DisplayName: Estoque de adamantita
+		Tooltip: Dispara un láser rojo ardiente uno de cada dos golpes
+	}
+
+	ChlorophyteRapier: {
+		DisplayName: Estoque de clorofita
+		Tooltip: Inflige sangrado al golpear y dispara dos nubes de esporas con cada golpe
+	}
+
+	CobaltRapier: {
+		DisplayName: Estoque de cobalto
+		Tooltip: Inflige sangrado y otorga rapidez al portador al golpear
+	}
+
+	HallowedRapier: {
+		DisplayName: Estoque sagrado
+		Tooltip:
+			'''
+			Inflige sangrado al golpear, dispara láseres rojo ardiente y
+			ocasionalmente otorga mejoras al portador al golpear
+			'''
+	}
+
+	MythrilRapier: {
+		DisplayName: Estoque de mithril
+		Tooltip: Inflige sangrado y se afila al golpear
+	}
+
+	OrichalcumRapier: {
+		DisplayName: Estoque de oricalco
+		Tooltip: Inflige sangrado y cada dos golpes dispara un pétalo rosa que perfora bloques
+	}
+
+	PalladiumRapier: {
+		DisplayName: Estoque de paladio
+		Tooltip: Dispara una bala cada tres golpes
+	}
+
+	TitaniumRapier: {
+		DisplayName: Estoque de titanio
+		Tooltip: Inflige sangrado y otorga piel de hierro al portador al golpear
+	}
+
+	AdamantiteBone: {
+		DisplayName: Hueso de adamantita
+		Tooltip: ""
+	}
+
+	ChlorophyteSpear: {
+		DisplayName: Lanza de clorofita
+		Tooltip: ""
+	}
+
+	CobaltShuriken: {
+		DisplayName: Estrellas ninja de cobalto
+		Tooltip: ""
+	}
+
+	HallowedGrenade: {
+		DisplayName: Granada sagrada
+		Tooltip: ""
+	}
+
+	MythrilThrowingDagger: {
+		DisplayName: Cuchillo arrojadizo de mithril
+		Tooltip: ""
+	}
+
+	OrichalcumCaltrop: {
+		DisplayName: Abrojo de oricalco
+		Tooltip: ""
+	}
+
+	PalladiumThrowingHammer: {
+		DisplayName: Martillo arrojadizo de paladio
+		Tooltip: ""
+	}
+
+	TitaniumJavelin: {
+		DisplayName: Jabalina de titanio
+		Tooltip: ""
+	}
+}
+
+Projectiles: {
+	AdamantiteBoneProjectile.DisplayName: Proyectil de hueso de adamantita
+	ChlorophyteSpearProjectile.DisplayName: Proyectil de lanza de clorofita
+	CobaltShurikenProjectile.DisplayName: Proyectil de estrellas ninja de cobalto
+	HallowedGrenadeProjectile.DisplayName: Proyectil de granada sagrada
+	MythrilThrowingDaggerProjectile.DisplayName: Proyectil de cuchillo arrojadizo de mithril
+	OrichalcumCaltropProjectile.DisplayName: Proyectil de abrojo de oricalco
+	PalladiumThrowingHammerProjectile.DisplayName: Proyectil de martillo arrojadizo de paladio
+	RedLaser.DisplayName: Láser rojo
+	TitaniumJavelinProjectile.DisplayName: Proyectil de jabalina de titanio
+	AdamantiteRapierProjectile.DisplayName: Proyectil de estoque de adamantita
+	ChlorophyteRapierProjectile.DisplayName: Proyectil de estoque de clorofita
+	CobaltRapierProjectile.DisplayName: Proyectil de estoque de cobalto
+	HallowedRapierProjectile.DisplayName: Proyectil de estoque sagrado
+	MythrilRapierProjectile.DisplayName: Proyectil de estoque de mithril
+	OrichalcumRapierProjectile.DisplayName: Proyectil de estoque de oricalco
+	PalladiumRapierProjectile.DisplayName: Proyectil de estoque de paladio
+	TitaniumRapierProjectile.DisplayName: Proyectil de estoque de titanio
+}
